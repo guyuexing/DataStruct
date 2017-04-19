@@ -1,15 +1,15 @@
 //
-//  main.c
+//  main.cpp
 //  DataStruct
 //
-//  Created by guyuexing on 17/4/19.
+//  Created by guyuexing on 17/4/20.
 //  Copyright © 2017年 neu. All rights reserved.
 //
 
-#include <stdio.h>
+#include <iostream>
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    printf("Hello, World!\n");
+    std::cout << "Hello, World!\n";
     return 0;
 }
