@@ -10,10 +10,21 @@
 		EC7166E91EAB51B700FF613C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC7166E81EAB51B700FF613C /* main.cpp */; };
 		EC7166ED1EAB51C400FF613C /* Triplet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC7166E01EAB47D400FF613C /* Triplet.cpp */; };
 		EC7166F01EAB5CDE00FF613C /* 算法的时间量度.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC7166EF1EAB5CDE00FF613C /* 算法的时间量度.cpp */; };
+		EC7166F81EAB758900FF613C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC7166F71EAB758900FF613C /* main.cpp */; };
+		EC7166FE1EAB75B400FF613C /* List.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC7166FC1EAB75B400FF613C /* List.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		EC7166E41EAB51B700FF613C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		EC7166F31EAB758900FF613C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -30,11 +41,22 @@
 		EC7166E81EAB51B700FF613C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		EC7166EE1EAB540E00FF613C /* Triplet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Triplet.h; sourceTree = "<group>"; };
 		EC7166EF1EAB5CDE00FF613C /* 算法的时间量度.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "算法的时间量度.cpp"; sourceTree = "<group>"; };
+		EC7166F51EAB758900FF613C /* ch2.线性表 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "ch2.线性表"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC7166F71EAB758900FF613C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		EC7166FC1EAB75B400FF613C /* List.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = List.cpp; sourceTree = "<group>"; };
+		EC7166FD1EAB75B400FF613C /* List.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = List.hpp; sourceTree = "<group>"; };
 		ECF5A0741EA7C5B7004123E6 /* PublicHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicHeader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		EC7166E31EAB51B700FF613C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC7166F21EAB758900FF613C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -55,11 +77,22 @@
 			path = ch1;
 			sourceTree = "<group>";
 		};
+		EC7166F61EAB758900FF613C /* ch2.线性表 */ = {
+			isa = PBXGroup;
+			children = (
+				EC7166F71EAB758900FF613C /* main.cpp */,
+				EC7166FD1EAB75B400FF613C /* List.hpp */,
+				EC7166FC1EAB75B400FF613C /* List.cpp */,
+			);
+			path = "ch2.线性表";
+			sourceTree = "<group>";
+		};
 		ECF5A0611EA7C4B3004123E6 = {
 			isa = PBXGroup;
 			children = (
 				ECF5A06C1EA7C4B3004123E6 /* DataStruct */,
 				EC7166E71EAB51B700FF613C /* ch1 */,
+				EC7166F61EAB758900FF613C /* ch2.线性表 */,
 				ECF5A06B1EA7C4B3004123E6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				EC7166E61EAB51B700FF613C /* ch1 */,
+				EC7166F51EAB758900FF613C /* ch2.线性表 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,6 +134,23 @@
 			productReference = EC7166E61EAB51B700FF613C /* ch1 */;
 			productType = "com.apple.product-type.tool";
 		};
+		EC7166F41EAB758900FF613C /* ch2.线性表 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC7166FB1EAB758900FF613C /* Build configuration list for PBXNativeTarget "ch2.线性表" */;
+			buildPhases = (
+				EC7166F11EAB758900FF613C /* Sources */,
+				EC7166F21EAB758900FF613C /* Frameworks */,
+				EC7166F31EAB758900FF613C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ch2.线性表";
+			productName = "ch2.线性表";
+			productReference = EC7166F51EAB758900FF613C /* ch2.线性表 */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -110,6 +161,9 @@
 				ORGANIZATIONNAME = neu;
 				TargetAttributes = {
 					EC7166E51EAB51B700FF613C = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					EC7166F41EAB758900FF613C = {
 						CreatedOnToolsVersion = 7.2.1;
 					};
 				};
@@ -127,6 +181,7 @@
 			projectRoot = "";
 			targets = (
 				EC7166E51EAB51B700FF613C /* ch1 */,
+				EC7166F41EAB758900FF613C /* ch2.线性表 */,
 			);
 		};
 /* End PBXProject section */
@@ -142,6 +197,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EC7166F11EAB758900FF613C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC7166F81EAB758900FF613C /* main.cpp in Sources */,
+				EC7166FE1EAB75B400FF613C /* List.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
@@ -153,6 +217,20 @@
 			name = Debug;
 		};
 		EC7166EC1EAB51B700FF613C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		EC7166F91EAB758900FF613C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EC7166FA1EAB758900FF613C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -246,6 +324,15 @@
 			buildConfigurations = (
 				EC7166EB1EAB51B700FF613C /* Debug */,
 				EC7166EC1EAB51B700FF613C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC7166FB1EAB758900FF613C /* Build configuration list for PBXNativeTarget "ch2.线性表" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC7166F91EAB758900FF613C /* Debug */,
+				EC7166FA1EAB758900FF613C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
