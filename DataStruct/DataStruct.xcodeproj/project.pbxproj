@@ -9,20 +9,11 @@
 /* Begin PBXBuildFile section */
 		EC7166E91EAB51B700FF613C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC7166E81EAB51B700FF613C /* main.cpp */; };
 		EC7166ED1EAB51C400FF613C /* Triplet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC7166E01EAB47D400FF613C /* Triplet.cpp */; };
-		ECF5A06E1EA7C4B3004123E6 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECF5A06D1EA7C4B3004123E6 /* main.cpp */; };
+		EC7166F01EAB5CDE00FF613C /* 算法的时间量度.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC7166EF1EAB5CDE00FF613C /* 算法的时间量度.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		EC7166E41EAB51B700FF613C /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-		ECF5A0681EA7C4B3004123E6 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -38,20 +29,12 @@
 		EC7166E61EAB51B700FF613C /* ch1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ch1; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC7166E81EAB51B700FF613C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		EC7166EE1EAB540E00FF613C /* Triplet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Triplet.h; sourceTree = "<group>"; };
-		ECF5A06A1EA7C4B3004123E6 /* DataStruct */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DataStruct; sourceTree = BUILT_PRODUCTS_DIR; };
-		ECF5A06D1EA7C4B3004123E6 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		EC7166EF1EAB5CDE00FF613C /* 算法的时间量度.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "算法的时间量度.cpp"; sourceTree = "<group>"; };
 		ECF5A0741EA7C5B7004123E6 /* PublicHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicHeader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		EC7166E31EAB51B700FF613C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ECF5A0671EA7C4B3004123E6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -67,6 +50,7 @@
 				EC7166E81EAB51B700FF613C /* main.cpp */,
 				EC7166EE1EAB540E00FF613C /* Triplet.h */,
 				EC7166E01EAB47D400FF613C /* Triplet.cpp */,
+				EC7166EF1EAB5CDE00FF613C /* 算法的时间量度.cpp */,
 			);
 			path = ch1;
 			sourceTree = "<group>";
@@ -83,7 +67,6 @@
 		ECF5A06B1EA7C4B3004123E6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				ECF5A06A1EA7C4B3004123E6 /* DataStruct */,
 				EC7166E61EAB51B700FF613C /* ch1 */,
 			);
 			name = Products;
@@ -92,7 +75,6 @@
 		ECF5A06C1EA7C4B3004123E6 /* DataStruct */ = {
 			isa = PBXGroup;
 			children = (
-				ECF5A06D1EA7C4B3004123E6 /* main.cpp */,
 				ECF5A0741EA7C5B7004123E6 /* PublicHeader.h */,
 			);
 			path = DataStruct;
@@ -118,23 +100,6 @@
 			productReference = EC7166E61EAB51B700FF613C /* ch1 */;
 			productType = "com.apple.product-type.tool";
 		};
-		ECF5A0691EA7C4B3004123E6 /* DataStruct */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = ECF5A0711EA7C4B3004123E6 /* Build configuration list for PBXNativeTarget "DataStruct" */;
-			buildPhases = (
-				ECF5A0661EA7C4B3004123E6 /* Sources */,
-				ECF5A0671EA7C4B3004123E6 /* Frameworks */,
-				ECF5A0681EA7C4B3004123E6 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = DataStruct;
-			productName = DataStruct;
-			productReference = ECF5A06A1EA7C4B3004123E6 /* DataStruct */;
-			productType = "com.apple.product-type.tool";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -145,9 +110,6 @@
 				ORGANIZATIONNAME = neu;
 				TargetAttributes = {
 					EC7166E51EAB51B700FF613C = {
-						CreatedOnToolsVersion = 7.2.1;
-					};
-					ECF5A0691EA7C4B3004123E6 = {
 						CreatedOnToolsVersion = 7.2.1;
 					};
 				};
@@ -164,7 +126,6 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				ECF5A0691EA7C4B3004123E6 /* DataStruct */,
 				EC7166E51EAB51B700FF613C /* ch1 */,
 			);
 		};
@@ -177,14 +138,7 @@
 			files = (
 				EC7166ED1EAB51C400FF613C /* Triplet.cpp in Sources */,
 				EC7166E91EAB51B700FF613C /* main.cpp in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ECF5A0661EA7C4B3004123E6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ECF5A06E1EA7C4B3004123E6 /* main.cpp in Sources */,
+				EC7166F01EAB5CDE00FF613C /* 算法的时间量度.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,20 +238,6 @@
 			};
 			name = Release;
 		};
-		ECF5A0721EA7C4B3004123E6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		ECF5A0731EA7C4B3004123E6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -314,15 +254,6 @@
 			buildConfigurations = (
 				ECF5A06F1EA7C4B3004123E6 /* Debug */,
 				ECF5A0701EA7C4B3004123E6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		ECF5A0711EA7C4B3004123E6 /* Build configuration list for PBXNativeTarget "DataStruct" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				ECF5A0721EA7C4B3004123E6 /* Debug */,
-				ECF5A0731EA7C4B3004123E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
