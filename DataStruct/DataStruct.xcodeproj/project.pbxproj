@@ -7,10 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC7166E91EAB51B700FF613C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC7166E81EAB51B700FF613C /* main.cpp */; };
+		EC7166ED1EAB51C400FF613C /* Triplet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC7166E01EAB47D400FF613C /* Triplet.cpp */; };
 		ECF5A06E1EA7C4B3004123E6 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECF5A06D1EA7C4B3004123E6 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		EC7166E41EAB51B700FF613C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		ECF5A0681EA7C4B3004123E6 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -23,12 +34,23 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EC7166E01EAB47D400FF613C /* Triplet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Triplet.cpp; path = ../DataStruct/Triplet.cpp; sourceTree = "<group>"; };
+		EC7166E61EAB51B700FF613C /* ch1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ch1; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC7166E81EAB51B700FF613C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		EC7166EE1EAB540E00FF613C /* Triplet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Triplet.h; sourceTree = "<group>"; };
 		ECF5A06A1EA7C4B3004123E6 /* DataStruct */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DataStruct; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECF5A06D1EA7C4B3004123E6 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		ECF5A0741EA7C5B7004123E6 /* PublicHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicHeader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		EC7166E31EAB51B700FF613C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ECF5A0671EA7C4B3004123E6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -39,10 +61,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC7166E71EAB51B700FF613C /* ch1 */ = {
+			isa = PBXGroup;
+			children = (
+				EC7166E81EAB51B700FF613C /* main.cpp */,
+				EC7166EE1EAB540E00FF613C /* Triplet.h */,
+				EC7166E01EAB47D400FF613C /* Triplet.cpp */,
+			);
+			path = ch1;
+			sourceTree = "<group>";
+		};
 		ECF5A0611EA7C4B3004123E6 = {
 			isa = PBXGroup;
 			children = (
 				ECF5A06C1EA7C4B3004123E6 /* DataStruct */,
+				EC7166E71EAB51B700FF613C /* ch1 */,
 				ECF5A06B1EA7C4B3004123E6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				ECF5A06A1EA7C4B3004123E6 /* DataStruct */,
+				EC7166E61EAB51B700FF613C /* ch1 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,6 +101,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		EC7166E51EAB51B700FF613C /* ch1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC7166EA1EAB51B700FF613C /* Build configuration list for PBXNativeTarget "ch1" */;
+			buildPhases = (
+				EC7166E21EAB51B700FF613C /* Sources */,
+				EC7166E31EAB51B700FF613C /* Frameworks */,
+				EC7166E41EAB51B700FF613C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ch1;
+			productName = ch1;
+			productReference = EC7166E61EAB51B700FF613C /* ch1 */;
+			productType = "com.apple.product-type.tool";
+		};
 		ECF5A0691EA7C4B3004123E6 /* DataStruct */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ECF5A0711EA7C4B3004123E6 /* Build configuration list for PBXNativeTarget "DataStruct" */;
@@ -93,6 +144,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = neu;
 				TargetAttributes = {
+					EC7166E51EAB51B700FF613C = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
 					ECF5A0691EA7C4B3004123E6 = {
 						CreatedOnToolsVersion = 7.2.1;
 					};
@@ -111,11 +165,21 @@
 			projectRoot = "";
 			targets = (
 				ECF5A0691EA7C4B3004123E6 /* DataStruct */,
+				EC7166E51EAB51B700FF613C /* ch1 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		EC7166E21EAB51B700FF613C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC7166ED1EAB51C400FF613C /* Triplet.cpp in Sources */,
+				EC7166E91EAB51B700FF613C /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ECF5A0661EA7C4B3004123E6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -127,6 +191,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		EC7166EB1EAB51B700FF613C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EC7166EC1EAB51B700FF613C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		ECF5A06F1EA7C4B3004123E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -223,6 +301,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		EC7166EA1EAB51B700FF613C /* Build configuration list for PBXNativeTarget "ch1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC7166EB1EAB51B700FF613C /* Debug */,
+				EC7166EC1EAB51B700FF613C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		ECF5A0651EA7C4B3004123E6 /* Build configuration list for PBXProject "DataStruct" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
