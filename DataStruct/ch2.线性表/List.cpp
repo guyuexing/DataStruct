@@ -10,8 +10,6 @@
 
 #include "List.hpp"
 
-
-
 Status InitList(SqList &L){
     //构造一个空的顺序线性表
     L.elem = (ElemType *)malloc(sizeof(ElemType)*LIST_INIT_SIZE);
@@ -57,7 +55,7 @@ Status GetElem(SqList L, int i, ElemType &e){
     if (i<1 || i>L.length) {
         exit(OVERFLOW);
     }
-    e = *(L.elem-1);
+    e = *(L.elem+i-1);
     //另一种写法：e = L.elem[i-1];
     return OK;
 }

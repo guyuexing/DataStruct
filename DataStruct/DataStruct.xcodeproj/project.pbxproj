@@ -12,6 +12,8 @@
 		EC7166F01EAB5CDE00FF613C /* 算法的时间量度.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC7166EF1EAB5CDE00FF613C /* 算法的时间量度.cpp */; };
 		EC7166F81EAB758900FF613C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC7166F71EAB758900FF613C /* main.cpp */; };
 		EC7166FE1EAB75B400FF613C /* List.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC7166FC1EAB75B400FF613C /* List.cpp */; };
+		ECD4993E1EAC76A1002B0C34 /* Algo2_1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECD4993C1EAC76A1002B0C34 /* Algo2_1.cpp */; };
+		ECD499411EAC827C002B0C34 /* Algo2_2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECD4993F1EAC827C002B0C34 /* Algo2_2.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +47,10 @@
 		EC7166F71EAB758900FF613C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		EC7166FC1EAB75B400FF613C /* List.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = List.cpp; sourceTree = "<group>"; };
 		EC7166FD1EAB75B400FF613C /* List.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = List.hpp; sourceTree = "<group>"; };
+		ECD4993C1EAC76A1002B0C34 /* Algo2_1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Algo2_1.cpp; sourceTree = "<group>"; };
+		ECD4993D1EAC76A1002B0C34 /* Algo2_1.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Algo2_1.hpp; sourceTree = "<group>"; };
+		ECD4993F1EAC827C002B0C34 /* Algo2_2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Algo2_2.cpp; sourceTree = "<group>"; };
+		ECD499401EAC827C002B0C34 /* Algo2_2.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Algo2_2.hpp; sourceTree = "<group>"; };
 		ECF5A0741EA7C5B7004123E6 /* PublicHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicHeader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,11 +86,31 @@
 		EC7166F61EAB758900FF613C /* ch2.线性表 */ = {
 			isa = PBXGroup;
 			children = (
+				ECD4993A1EAC7651002B0C34 /* 数据类型定义 */,
+				ECD4993B1EAC7662002B0C34 /* 具体算法 */,
 				EC7166F71EAB758900FF613C /* main.cpp */,
+			);
+			path = "ch2.线性表";
+			sourceTree = "<group>";
+		};
+		ECD4993A1EAC7651002B0C34 /* 数据类型定义 */ = {
+			isa = PBXGroup;
+			children = (
 				EC7166FD1EAB75B400FF613C /* List.hpp */,
 				EC7166FC1EAB75B400FF613C /* List.cpp */,
 			);
-			path = "ch2.线性表";
+			name = "数据类型定义";
+			sourceTree = "<group>";
+		};
+		ECD4993B1EAC7662002B0C34 /* 具体算法 */ = {
+			isa = PBXGroup;
+			children = (
+				ECD4993D1EAC76A1002B0C34 /* Algo2_1.hpp */,
+				ECD4993C1EAC76A1002B0C34 /* Algo2_1.cpp */,
+				ECD499401EAC827C002B0C34 /* Algo2_2.hpp */,
+				ECD4993F1EAC827C002B0C34 /* Algo2_2.cpp */,
+			);
+			name = "具体算法";
 			sourceTree = "<group>";
 		};
 		ECF5A0611EA7C4B3004123E6 = {
@@ -201,7 +227,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECD4993E1EAC76A1002B0C34 /* Algo2_1.cpp in Sources */,
 				EC7166F81EAB758900FF613C /* main.cpp in Sources */,
+				ECD499411EAC827C002B0C34 /* Algo2_2.cpp in Sources */,
 				EC7166FE1EAB75B400FF613C /* List.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,6 +363,7 @@
 				EC7166FA1EAB758900FF613C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ECF5A0651EA7C4B3004123E6 /* Build configuration list for PBXProject "DataStruct" */ = {
 			isa = XCConfigurationList;

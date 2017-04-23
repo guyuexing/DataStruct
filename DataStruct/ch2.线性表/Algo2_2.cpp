@@ -1,0 +1,50 @@
+//
+//  Algo2_2.cpp
+//  DataStruct
+//
+//  Created by guyuexing on 17/4/23.
+//  Copyright © 2017年 neu. All rights reserved.
+//
+
+#include "Algo2_2.hpp"
+
+//La,Lb均为递增有序列表，将其归并为列表Lc，Lc也是递增，没有去重
+void mergeList(SqList La, SqList Lb, SqList &Lc){
+    //初始化Lc
+    InitList(Lc);
+    //取得La和Lb的长度
+    int la_len = La.length;
+    int lb_len = Lb.length;
+    
+    int i, j, k;
+    i = j = 1, k = 0;
+    //分别用来接收La和Lb列表的元素
+    ElemType ai, bj;
+    
+    //当La和Lb列表中的元素均没有遍历完时
+    while (i<=la_len && j <= lb_len) {
+        //取出La和Lb中对应位序的元素
+        GetElem(La, i, ai);
+        GetElem(Lb, j, bj);
+        //对元素进行比较，向Lc中插入较小的元素
+        if (ai<=bj) {
+            ListInsert(Lc, ++k, ai);
+            i++;
+        }else{
+            ListInsert(Lc, ++k, bj);
+            j++;
+        }
+    }
+    
+    //当La长度较长时，将未遍历到的元素插入Lc末尾
+    while (i<=la_len) {
+        GetElem(La, i++, ai);
+        ListInsert(Lc, ++k, ai);
+    }
+    
+    //当Lb长度较长时，将未遍历到的元素插入到Lb末尾
+    while (j<=lb_len) {
+        GetElem(Lb, j++, bj);
+        ListInsert(Lc, ++k, bj);
+    }
+}
