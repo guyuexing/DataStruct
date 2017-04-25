@@ -8,6 +8,13 @@
 
 #include "Algo2_1.hpp"
 
+/*
+ 此算法的时间复杂度：
+    GetElem和ListInsert这两个操作的执行时间和表长无关（实际上ListInsert是和表长有关的，但是本算法是直接插在表的最末，所以与表长无关）
+    LocateElem的执行时间与表长成正比
+ 故本算法的时间复杂度为O(ListLength(LA)*ListLength(LB))
+ */
+
 //判断两个元素是否相等，Union函数要用到
 Status equal(ElemType e1, ElemType e2){
     if (e1 == e2) {

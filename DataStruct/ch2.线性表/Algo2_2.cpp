@@ -8,6 +8,12 @@
 
 #include "Algo2_2.hpp"
 
+/*
+ 虽然此算法包含了3个循环语句，但只有当i和j均指向表中实际存在的数据元素时，才能取得数据元素的值进行相互比较；并且当其中一个线性表的数据元素均已插入到线性表LC后，只要将另外一个线性表中的剩余元素依次插入即可
+ 此算法的时间复杂度为O(ListLength(LA)+ListLength(LB))
+ 
+ */
+
 //La,Lb均为递增有序列表，将其归并为列表Lc，Lc也是递增，没有去重
 void mergeList(SqList La, SqList Lb, SqList &Lc){
     //初始化Lc

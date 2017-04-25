@@ -15,7 +15,7 @@ Status InitList(SqList &L){
     L.elem = (ElemType *)malloc(sizeof(ElemType)*LIST_INIT_SIZE);
     if (!L.elem) {
         //分配存储空间失败
-        exit(OVERFLOW);
+        exit(OVERFLOWD);
     }
     L.length = 0;  //空表长度
     L.listSize = LIST_INIT_SIZE;  //初始存储容量
@@ -53,7 +53,7 @@ int ListLength(SqList L){
 
 Status GetElem(SqList L, int i, ElemType &e){
     if (i<1 || i>L.length) {
-        exit(OVERFLOW);
+        exit(OVERFLOWD);
     }
     e = *(L.elem+i-1);
     //另一种写法：e = L.elem[i-1];
@@ -142,6 +142,7 @@ Status NextElem(SqList L, int cur_e, ElemType &next_e){
  *  @param e 要插入的元素
  *
  *  @return 操作结果状态码
+    时间复杂度为O(n)
  */
 Status ListInsert(SqList &L, int i, int e){
     //输入的位置不合法
@@ -154,7 +155,7 @@ Status ListInsert(SqList &L, int i, int e){
         newBase = (ElemType *)realloc(L.elem, sizeof(ElemType)*(L.listSize + LIST_INCREMENT));
         if (!newBase) {
             //存储分配失败
-            exit(OVERFLOW);
+            exit(OVERFLOWD);
         }else{
             //新基址
             L.elem = newBase;
@@ -183,21 +184,22 @@ Status ListInsert(SqList &L, int i, int e){
  *  @param e 要删除的元素值
  *
  *  @return 结果状态码
+    时间复杂度为O(n)
  */
 Status ListDelete(SqList &L, int i, ElemType &e){
     //i的值输入不合法
     if (i<1 || i>L.length) {
-        exit(OVERFLOW);
+        exit(OVERFLOWD);
     }
     //要删除元素的位置
     ElemType *q = L.elem+i-1;
     //要删除的元素
     e = *q;
     //删除元素后面的元素位置均要前移
-    ElemType *p = L.elem + L.length - 1;
-    while (p>q) {
-        *(p-1) = *p;
-        p--;
+    ElemType *p = L.elem + L.length - 1;//最后一个元素的位置
+    while (q<p) {
+        *q = *(q+1);
+        q++;
     }
     //线性表的长度减一
     L.length--;

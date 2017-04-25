@@ -10,7 +10,7 @@
 //Triplet &T为引用传递, 传递其他三个参数用于初始化三元组T
 Status InitTriplet (Triplet &T, ElemType v1, ElemType v2, ElemType v3){
     if (!(T = (ElemType *)malloc(sizeof(ElemType)*3))) {
-        exit(OVERFLOW);
+        exit(OVERFLOWD);
     }
     T[0] = v1;
     T[1] = v2;
