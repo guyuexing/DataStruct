@@ -80,6 +80,7 @@ int ListLength(LinkList L){
 }
 
 //当线性表中第i个元素存在时，将此元素赋值给e并返回OK，否则返回error
+//算法的时间复杂度为O(n)
 Status GetElem(LinkList L, int i, ElemType &e){
     //定义计数器表示是否找到了i位置
     int j = 1;
@@ -121,4 +122,108 @@ int LocateElem(LinkList L, ElemType e, Status (*compare)(ElemType e1, ElemType e
     }
     //如果遍历了整个线性表还没有找到与e相等的元素，返回0
     return 0;
+}
+
+//若cur_e是线性表L的元素且不是第一个，用pre_e返回cur_e的前驱，函数状态码为OK；否则pre_e无定义，且函数状态为INFEASIBLE
+Status PriorElem(LinkList L, ElemType cur_e, ElemType &pre_e){
+    //定义p为线性表的第一个元素
+    LinkList p = L->next;
+    LinkList q;
+    //如果p有后继元素
+    while (p->next) {
+        //用q指向p的后继元素
+        q = p->next;
+        //如果p的后继元素值等于cur_e
+        if (q->data == cur_e) {
+            //给pre_e赋值为p的元素值
+            pre_e = p->data;
+            return OK;
+        }
+        //将p的后继q重新赋值给p
+        p = q;
+    }
+    return INFEASIBLE;
+}
+
+//如果cur_e是线性表L的元素且不是最后一个，用next_e返回cur_e的后继元素，函数的状态码为OK；否则next_e无定义，函数状态码为INFEASIBLE
+Status NextElem(LinkList L, ElemType cur_e, ElemType &next_e){
+    //定义p为L的第一个元素
+    LinkList p = L->next;
+    //如果p有后继元素
+    while (p->next) {
+        //如果p的元素值等于cur_e
+        if (p->data == cur_e) {
+            //将p的后继元素值赋值给next_e
+            next_e = p->next->data;
+            return OK;
+        }
+        //将p的后继重新赋值给p
+        p = p->next;
+    }
+    return INFEASIBLE;
+}
+
+//向线性表L的第i个位置插入元素e
+//算法的时间复杂度为O(n)
+Status ListInsert(LinkList L, int i, ElemType e){
+    //将线性表的头结点位置赋值给p
+    LinkList p = L;
+    //定义j为p结点在表L中的位序
+    int j = 0;
+    //找到表L中的第i-1个结点
+    while (j<i-1&&p) {
+        j++;
+        p = p->next;
+    }
+    
+    //如果i小于1或者i大于表长（即p为空）
+    if (!p||j>i-1) {
+        return ERROR;
+    }
+    //生成一个新节点
+    LinkList q = (LinkList)malloc(sizeof(LNode));
+    //新节点的元素值为e
+    q->data = e;
+    //新节点的后继为p的后继（位序为i）的后继（位序为i+1）
+    q->next = p->next->next;
+    //p的后继为q
+    p->next = q;
+    return OK;
+}
+
+//删除表L中的第i个元素，并用e返回删除的元素值
+//算法的时间复杂度为O(n)
+Status DeleteList(LinkList L, int i, ElemType &e){
+    //定义p指向线性表L的头结点
+    LinkList p = L;
+    //定义j为p结点的位序
+    int j = 0;
+    //找到线性表的第i-1个结点，并且第i个结点不为空
+    while (j<i-1 && p->next) {
+        j++;
+        p = p->next;
+    }
+    //如果i小于1或者i大于表长（即p->next为空）
+    if (j>i-1 || !p->next) {
+        return ERROR;
+    }
+    //定义q为p的后继
+    LinkList q = p->next;
+    e = q->data;
+    //p的后继（即位序i-1的元素的后继）为p的后继的后继（即位序为i+1的元素）
+    p->next = p->next->next;
+    //释放位序为i的元素存储空间
+    free(q);
+    return OK;
+}
+
+//对线性表L中的每一个元素都执行vi函数，一旦vi失败，则操作失败
+Status ListTraverse(LinkList L, void(*vi)(ElemType e)){
+    LinkList p = L->next;
+    while (p) {
+        vi(p->data);
+        p = p->next;
+    }
+    printf("\n");
+    return OK;
 }
