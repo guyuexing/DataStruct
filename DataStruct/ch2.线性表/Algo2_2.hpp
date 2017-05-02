@@ -8,4 +8,5 @@
 #include "PublicHeader.h"
 #include "List.hpp"
 
+//算法2.2
 void mergeList(SqList La, SqList Lb, SqList &Lc);

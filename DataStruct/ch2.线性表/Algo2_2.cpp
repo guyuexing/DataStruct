@@ -54,3 +54,27 @@ void mergeList(SqList La, SqList Lb, SqList &Lc){
         ListInsert(Lc, ++k, bj);
     }
 }
+
+void print2_2(ElemType &e){
+    printf("%d",e);
+}
+
+void example2_2(){
+    /*****两个递增线性表合并成第三个递增线性表，不去重**********/
+    SqList La, Lb, Lc;
+    int a[4] = {3,5,8,11};
+    La.elem = a;
+    La.length = sizeof(a)/sizeof(int);
+    printf("La = ");
+    ListTraverse(La, print2_2);
+    
+    int b[7] = {2,6,8,9,11,15,20};
+    Lb.elem = b;
+    Lb.length = sizeof(b)/sizeof(int);
+    printf("Lb = ");
+    ListTraverse(Lb, print2_2);
+    
+    mergeList(La, Lb, Lc);
+    printf("Lc = ");
+    ListTraverse(Lc, print2_2);
+}

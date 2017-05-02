@@ -9,4 +9,5 @@
 #include "PublicHeader.h"
 #include "List.hpp"
 
+//算法2.1
 void Union(SqList &La, SqList Lb);

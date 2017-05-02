@@ -10,8 +10,8 @@
 
 /*
  此算法的时间复杂度：
-    GetElem和ListInsert这两个操作的执行时间和表长无关（实际上ListInsert是和表长有关的，但是本算法是直接插在表的最末，所以与表长无关）
-    LocateElem的执行时间与表长成正比
+ GetElem和ListInsert这两个操作的执行时间和表长无关（实际上ListInsert是和表长有关的，但是本算法是直接插在表的最末，所以与表长无关）
+ LocateElem的执行时间与表长成正比
  故本算法的时间复杂度为O(ListLength(LA)*ListLength(LB))
  */
 
@@ -43,3 +43,36 @@ void Union(SqList &La, SqList Lb){
         }
     }
 }
+
+void print2_1(ElemType &e){
+    printf("%d",e);
+}
+
+//执行函数
+void example2_1(){
+    /********两个线性表合并的算法，合并到末尾，去除重复元素**********/
+    SqList La, Lb;
+    Status i;
+    i = InitList(La);
+    if (i==1) {
+        for (int j = 1; j<=5; j++) {
+            ListInsert(La, j, j);
+        }
+    }
+    printf("La = ");
+    ListTraverse(La, print2_1);
+    
+    i = InitList(Lb);
+    if (i==1) {
+        for (int j = 1; j<=5; j++) {
+            ListInsert(Lb, j, 2*j);
+        }
+    }
+    printf("Lb = ");
+    ListTraverse(Lb, print2_1);
+    
+    Union(La, Lb);
+    printf("合并之后La = ");
+    ListTraverse(La, print2_1);
+}
+
