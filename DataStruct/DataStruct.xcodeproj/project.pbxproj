@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC2CDFCD1EC4BBA100AA4257 /* Algo2_6.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC2CDFCB1EC4BBA000AA4257 /* Algo2_6.cpp */; };
 		EC7166E91EAB51B700FF613C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC7166E81EAB51B700FF613C /* main.cpp */; };
 		EC7166ED1EAB51C400FF613C /* Triplet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC7166E01EAB47D400FF613C /* Triplet.cpp */; };
 		EC7166F01EAB5CDE00FF613C /* 算法的时间量度.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC7166EF1EAB5CDE00FF613C /* 算法的时间量度.cpp */; };
@@ -43,6 +44,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EC2CDFCB1EC4BBA000AA4257 /* Algo2_6.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Algo2_6.cpp; sourceTree = "<group>"; };
+		EC2CDFCC1EC4BBA100AA4257 /* Algo2_6.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Algo2_6.hpp; sourceTree = "<group>"; };
 		EC7166E01EAB47D400FF613C /* Triplet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Triplet.cpp; path = ../DataStruct/Triplet.cpp; sourceTree = "<group>"; };
 		EC7166E61EAB51B700FF613C /* ch1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ch1; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC7166E81EAB51B700FF613C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -134,6 +137,8 @@
 				ECC44ED31EB8CF260049F1EE /* Algo2_4.cpp */,
 				ECC44ED71EB8D5E10049F1EE /* Algo2_5.hpp */,
 				ECC44ED61EB8D5E10049F1EE /* Algo2_5.cpp */,
+				EC2CDFCC1EC4BBA100AA4257 /* Algo2_6.hpp */,
+				EC2CDFCB1EC4BBA000AA4257 /* Algo2_6.cpp */,
 			);
 			name = "具体算法";
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 				EC917D661EBA253D0026B9E1 /* SLinkList.cpp in Sources */,
 				EC7166F81EAB758900FF613C /* main.cpp in Sources */,
 				ECA191E51EAFA4B800960C5B /* Algo2_3.cpp in Sources */,
+				EC2CDFCD1EC4BBA100AA4257 /* Algo2_6.cpp in Sources */,
 				ECD499411EAC827C002B0C34 /* Algo2_2.cpp in Sources */,
 				ECC44ED51EB8CF260049F1EE /* Algo2_4.cpp in Sources */,
 				ECC44ED81EB8D5E10049F1EE /* Algo2_5.cpp in Sources */,

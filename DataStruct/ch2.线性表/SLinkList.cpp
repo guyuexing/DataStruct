@@ -9,7 +9,7 @@
 #include "SLinkList.hpp"
 
 //静态链表初始化时就已经创建了所有的存储空间，Malloc的作用是将备用链表的结点取出并返回结点位序
-int Malloc(SLinkList space){
+int Malloc(SLinkList space){  //space是一个包含有MAXSIZE个结构体元素的数组，在这里是指针传递（因为传递的是数组名），在这里会复制指针
     //用i返回备用链表的第一个结点
     int i = space[0].cur;
     //如果第一个结点不为空，将备用链表的第一个结点变更为原备用链表的第二个结点
