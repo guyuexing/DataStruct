@@ -197,7 +197,7 @@ Status ListDelete(SqList &L, int i, ElemType &e){
     e = *q;
     //删除元素后面的元素位置均要前移
     ElemType *p = L.elem + L.length - 1;//最后一个元素的位置
-    while (q<p) {
+    while (q<=p) {
         *q = *(q+1);
         q++;
     }
