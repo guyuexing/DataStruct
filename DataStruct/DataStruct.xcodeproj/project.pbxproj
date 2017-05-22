@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EC0EB3681ECCA11F004D0F02 /* DuLinkList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC0EB3661ECCA11F004D0F02 /* DuLinkList.cpp */; };
+		EC1D9FFD1ED32FA800C51A89 /* OptimalLinkList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC1D9FFB1ED32FA800C51A89 /* OptimalLinkList.cpp */; };
 		EC2CDFCD1EC4BBA100AA4257 /* Algo2_6.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC2CDFCB1EC4BBA000AA4257 /* Algo2_6.cpp */; };
 		EC7166E91EAB51B700FF613C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC7166E81EAB51B700FF613C /* main.cpp */; };
 		EC7166ED1EAB51C400FF613C /* Triplet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC7166E01EAB47D400FF613C /* Triplet.cpp */; };
@@ -47,6 +48,8 @@
 /* Begin PBXFileReference section */
 		EC0EB3661ECCA11F004D0F02 /* DuLinkList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DuLinkList.cpp; sourceTree = "<group>"; };
 		EC0EB3671ECCA11F004D0F02 /* DuLinkList.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DuLinkList.hpp; sourceTree = "<group>"; };
+		EC1D9FFB1ED32FA800C51A89 /* OptimalLinkList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OptimalLinkList.cpp; sourceTree = "<group>"; };
+		EC1D9FFC1ED32FA800C51A89 /* OptimalLinkList.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OptimalLinkList.hpp; sourceTree = "<group>"; };
 		EC2CDFCB1EC4BBA000AA4257 /* Algo2_6.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Algo2_6.cpp; sourceTree = "<group>"; };
 		EC2CDFCC1EC4BBA100AA4257 /* Algo2_6.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Algo2_6.hpp; sourceTree = "<group>"; };
 		EC7166E01EAB47D400FF613C /* Triplet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Triplet.cpp; path = ../DataStruct/Triplet.cpp; sourceTree = "<group>"; };
@@ -125,6 +128,8 @@
 				EC917D641EBA253D0026B9E1 /* SLinkList.cpp */,
 				EC0EB3671ECCA11F004D0F02 /* DuLinkList.hpp */,
 				EC0EB3661ECCA11F004D0F02 /* DuLinkList.cpp */,
+				EC1D9FFC1ED32FA800C51A89 /* OptimalLinkList.hpp */,
+				EC1D9FFB1ED32FA800C51A89 /* OptimalLinkList.cpp */,
 			);
 			name = "数据类型定义";
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 				ECD499411EAC827C002B0C34 /* Algo2_2.cpp in Sources */,
 				ECC44ED51EB8CF260049F1EE /* Algo2_4.cpp in Sources */,
 				ECC44ED81EB8D5E10049F1EE /* Algo2_5.cpp in Sources */,
+				EC1D9FFD1ED32FA800C51A89 /* OptimalLinkList.cpp in Sources */,
 				EC7166FE1EAB75B400FF613C /* List.cpp in Sources */,
 				ECDD9C9B1EB242C3001F4645 /* LinkList.cpp in Sources */,
 				EC0EB3681ECCA11F004D0F02 /* DuLinkList.cpp in Sources */,
