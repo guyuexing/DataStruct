@@ -153,13 +153,90 @@ Status Remove(LinkList &L, Link &q){
     return OK;
 }
 
+//已知p指向线性链表L中的一个节点，将s所指节点插入在p所指节点之前，并修改指针p指向新插入的结点
+Status InsBefore(LinkList &L, Link &p, Link s){
+    //q是p节点的前驱
+    Link q = PriorPos(L, p);
+    //如果p节点没有前驱，则q指向链表L的头结点
+    if (!q) {
+        q = L.header;
+    }
+    //插入s节点
+    q->next = s;
+    s->next = p;
+    p = s;
+    L.len++;
+    return OK;
+}
 
+//已知p指向线性链表L中的一个结点，将s所指结点插入在p所指节点之后，并修改指针p指向新插入的结点
+Status InsAfter(LinkList &L, Link &p, Link s){
+    s->next = p->next;
+    p->next = s;
+    if (p==L.tail) { //修改尾指针
+        L.tail = s;
+    }
+    p = s;
+    L.len++;
+    return OK;
+}
 
+//已知p指向线性链表的一个结点，用e更新p指向结点的数据元素的值
+Status SetCurElem(Link p, ElemType e){
+    p->data = e;
+    return OK;
+}
 
+//已知p指向线性链表的一个结点，返回结点的数据元素的值
+ElemType GetCurElem(Link p){
+    return p->data;
+}
 
+//若线性链表为空表返回True，否则返回False
+Status ListEmpty(LinkList L){
+    if (!L.len) {
+        return TRUE;
+    }else{
+        return FALSE;
+    }
+}
 
+//返回线性链表的元素个数
+int ListLength(LinkList L){
+    return L.len;
+}
 
+//返回线性链表头结点的位置
+Position GetHeader(LinkList L){
+    return L.header;
+}
 
+//返回线性链表最后一个结点的位置
+Position GetLast(LinkList L){
+    return L.tail;
+}
 
+//已知p指向线性链表中的一个结点，返回p所指向结点的直接后继，若无直接后继，则返回NULL
+Position NextPos(Link p){
+    return p->next;
+}
+
+//用p返回线性链表L中第i个结点的位置，并返回OK，如果i值不合法则返回error
+Status LocatePos(LinkList L, int i, Link &p){
+    if (i<1 || i>ListLength(L)) {
+        return ERROR;
+    }
+    Link q = L.header;
+    int j = 0;
+    while (j<i && q!=L.tail) {
+        j++;
+        q = q->next;
+    }
+    if (j>i || j>ListLength(L)) {
+        return ERROR;
+    }
+    p = q;
+    return OK;
+}
 
 
