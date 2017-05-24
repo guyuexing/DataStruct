@@ -239,4 +239,81 @@ Status LocatePos(LinkList L, int i, Link &p){
     return OK;
 }
 
+//返回线性链表L中第一个与e满足compare判定关系的结点的位置，若不存在这样的元素，则返回NULL
+Position LocateElem(LinkList L, ElemType e, Status (*compare)(ElemType e1, ElemType e2)){
+    Link p = L.header->next;
+    while (p!=L.tail) {
+        if (compare(p->data,e)) {
+            return p;
+        }
+        p = p->next;
+    }
+    return NULL;
+}
+
+//依次对L中的每个调用数据元素调用visit函数。一旦visit失败，则操作失败
+Status ListTraverse(LinkList L, void (*visit)(ElemType e)){
+    Link p = L.header->next;
+    while (p!=L.tail) {
+        visit(p->data);
+        p = p->next;
+    }
+    printf("\n");
+    return OK;
+}
+
+//已知L为有序线性链表，将e元素按非降序插入在L中（用于一元多项式）
+Status OrderInsert(LinkList &L, ElemType e, Status (*compare)(ElemType, ElemType)){
+    Link p = L.header->next;
+    Link q = L.header; //q用来表示p的前驱
+    while (p!=NULL) { //之所以用p!=NULL作为循环结束条件，是为了让e能与链表L的最后一个结点元素值做比较
+        
+        //比较p指向结点的数据与e的大小，当p->data第一次大于等于e时，e即插入在p的前驱和p之间
+        if (compare(p->data,e)>=0) {
+            break;
+        }
+        q = p;
+        p = p->next;
+    }
+    Link s = (Link)malloc(sizeof(LNode));
+    s->data = e;
+    q->next = s;
+    s->next = p;
+    //如果p等于NULL说明遍历到最后也没有找到比e大的值，因此e所在结点是表尾，修改表尾指针
+    if (p==NULL) {
+        L.tail = s;
+    }
+    L.len++;
+    return OK;
+}
+
+//若升序链表L中存在与e满足判定函数compare取值为0的元素，则p返回L中第一个值为e的结点的位置，并返回true；否则p指示第一个与e满足判定函数compare>0的元素的前驱的位置，并返回false（用于一元多项式）
+Status LocatElem(LinkList L, ElemType e, Position &p, int(*compare)(ElemType, ElemType)){
+//    Link q = L.header->next;
+//    Link s = L.header;
+//    while (!q) {
+//        if (compare(q->data,e)==0) {
+//            p = q;
+//            return OK;
+//        }else if (compare(q->data,e)>0){
+//            p = s;
+//            return FALSE;
+//        }
+//        s = q;
+//        q = q->next;
+//    }
+    Link q = L.header;
+    Link s;
+    do {
+        s = q;
+        q = q->next;
+    } while (q && compare(q->data,e)<0); //循环结束后q可能到了表尾，也可能是compare(q->data,e)>=0
+    if (!q||compare(q->data,e)>0) {
+        p = s;
+        return FALSE;
+    }else{
+        p = q;
+        return TRUE;
+    }
+}
 
