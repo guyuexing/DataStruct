@@ -7,7 +7,7 @@
 //
 #include "PublicHeader.h"
 
-typedef int ElemType;
+//typedef int ElemType;
 
 struct LNode {
     //存储的数据

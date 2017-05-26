@@ -70,7 +70,7 @@ Status DestoryList(LinkList &L){
     return OK;
 }
 
-//已知h指向线性链表的头结点，将s所指结点插入在第一个结点之前
+//已知h指向线性链表的头结点，将s所指结点插入在原第一个结点之前（即s成为第一个结点）
 Status InsFirst(LinkList &L, Link s, Link h){
     //p指向原来的第一个节点
     Link p = h->next;
@@ -228,7 +228,7 @@ Status LocatePos(LinkList L, int i, Link &p){
     }
     Link q = L.header;
     int j = 0;
-    while (j<i && q!=L.tail) {
+    while (j<i && q!=NULL) {
         j++;
         q = q->next;
     }
@@ -242,7 +242,7 @@ Status LocatePos(LinkList L, int i, Link &p){
 //返回线性链表L中第一个与e满足compare判定关系的结点的位置，若不存在这样的元素，则返回NULL
 Position LocateElem(LinkList L, ElemType e, Status (*compare)(ElemType e1, ElemType e2)){
     Link p = L.header->next;
-    while (p!=L.tail) {
+    while (p!=NULL) {
         if (compare(p->data,e)) {
             return p;
         }
@@ -254,7 +254,7 @@ Position LocateElem(LinkList L, ElemType e, Status (*compare)(ElemType e1, ElemT
 //依次对L中的每个调用数据元素调用visit函数。一旦visit失败，则操作失败
 Status ListTraverse(LinkList L, void (*visit)(ElemType e)){
     Link p = L.header->next;
-    while (p!=L.tail) {
+    while (p!=NULL) {
         visit(p->data);
         p = p->next;
     }

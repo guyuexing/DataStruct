@@ -7,7 +7,7 @@
 //
 #include "PublicHeader.h"
 
-typedef int ElemType;  //定义抽象数据类型ElemType在本例中为整型
+//typedef int ElemType;  //定义抽象数据类型ElemType在本例中为整型
 typedef ElemType * Triplet;  //Triplet为ElemType类型的指针，存放ElemType类型的地址
 
 Status InitTriplet (Triplet &T, ElemType v1, ElemType v2, ElemType v3);

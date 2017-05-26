@@ -9,7 +9,7 @@
 
 #include "PublicHeader.h"
 
-typedef int ElemType;
+//typedef int ElemType;
 
 typedef struct DuLNode{
     DuLNode *next, *prior;

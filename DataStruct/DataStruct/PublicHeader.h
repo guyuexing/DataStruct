@@ -24,6 +24,7 @@
 
 typedef int Status;  // Status是函数的类型,其值是函数结果状态代码，如OK等
 typedef int Boolean; // Boolean是布尔类型,其值是TRUE或FALSE
+typedef int ElemType;
 
 /**
  *  基本的函数说明

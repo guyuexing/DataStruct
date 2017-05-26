@@ -9,7 +9,7 @@
 
 //线性表的静态单链表存储结构
 #define MAXSIZE 100
-typedef int ElemType;
+//typedef int ElemType;
 
 typedef struct {
     ElemType data;
