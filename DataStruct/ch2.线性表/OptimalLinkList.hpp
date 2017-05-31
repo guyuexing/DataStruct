@@ -55,13 +55,8 @@ Position GetLast(LinkList L);
 
 Position NextPos(Link p);
 
-Status LocatePos(LinkList L, int i, Link &p);
-
 Position LocateElem(LinkList L, ElemType e, Status (*compare)(ElemType e1, ElemType e2));
 
 Status ListTraverse(LinkList L, void (*visit)(ElemType e));
 
-Status OrderInsert(LinkList &L, ElemType e, Status (*compare)(ElemType, ElemType));
-
-Status LocatElem(LinkList L, ElemType e, Position &p, int(*compare)(ElemType, ElemType));
-
+Status LocatePos(LinkList L, int i, Link &p);
