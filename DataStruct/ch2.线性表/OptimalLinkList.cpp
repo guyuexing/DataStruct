@@ -124,7 +124,7 @@ Position PriorPos(LinkList L, Link p){
         return NULL;
     }
     Link q = L.header->next;
-    while (q->next!=L.tail) {
+    while (q->next) {
         if (q->next == p) {
             return q;
         }
