@@ -22,6 +22,3 @@ struct Polynomial{   //链表类型
     Link header, tail;   //分别指向线性链表的头结点和最后一个结点
     int len;             //指示线性链表的元素个数
 };
-
-#define DestoryPolyn DestoryList  //销毁线性链表L
-#define PolynLength  ListLength   //求线性表的长度
