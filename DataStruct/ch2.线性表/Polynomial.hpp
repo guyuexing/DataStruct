@@ -13,9 +13,9 @@ typedef struct {  //项的表示，多项式的项作为LinkList的数据元素
     int expn;    //指数项
 } Term, PolyElemType;
 
-typedef struct LNode{  //结点类型
+typedef struct PolynNode{  //结点类型
     PolyElemType data;
-    struct LNode *next;
+    struct PolynNode *next;
 } *Link, *Position;
 
 struct Polynomial{   //链表类型

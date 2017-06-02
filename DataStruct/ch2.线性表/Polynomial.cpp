@@ -19,7 +19,7 @@ int compare(Term a, Term b){
 
 //分配由p指向的值为e的结点，并返回OK，若分配失败，则返回error
 Status MakeNode(Link &p, PolyElemType e){
-    p = (Link)malloc(sizeof(LNode));
+    p = (Link)malloc(sizeof(PolynNode));
     if (!p) {
         return ERROR;
     }
@@ -36,7 +36,7 @@ void FreeNode(Link &p){
 //构造一个空的线性链表P
 Status InitPolyn(Polynomial &P){
     //生成头结点
-    Link p = (Link)malloc(sizeof(LNode));
+    Link p = (Link)malloc(sizeof(PolynNode));
     if (!p) {
         return ERROR;
     }
@@ -216,7 +216,7 @@ Status OrderInsert(Polynomial &P, PolyElemType e, int (*compare)(PolyElemType, P
         q = p;
         p = p->next;
     }
-    Link s = (Link)malloc(sizeof(LNode));
+    Link s = (Link)malloc(sizeof(PolynNode));
     s->data = e;
     q->next = s;
     s->next = p;
