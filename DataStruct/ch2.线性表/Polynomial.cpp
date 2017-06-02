@@ -13,7 +13,7 @@ int compare(Term a, Term b){
     if (a.expn == b.expn) {
         return 0;
     }else{
-        return (a.expn-b.expn)/abs(a.expn-b.expn);
+        return (a.expn-b.expn)/abs(a.expn-b.expn);  //abs是取绝对值
     }
 }
 
@@ -98,12 +98,29 @@ int PolynLength(Polynomial P){
     return P.len;
 }
 
+//已知p指向线性链表L中的一个结点，返回p所指结点的直接前驱的位置，若无前驱，则返回NULL
+Position PriorPos(Polynomial P, Link p){
+    //如果p是链表L的第一个节点，无前驱
+    if (p==P.header->next) {
+        return NULL;
+    }
+    Link q = P.header->next;
+    while (q->next) {
+        if (q->next == p) {
+            return q;
+        }
+        q = q->next;
+    }
+    return NULL;
+}
+
 //已知p指向线性链表中的一个结点，返回p所指向结点的直接后继，若无直接后继，则返回NULL
 Position NextPos(Link p){
     return p->next;
 }
 
 //已知h指向线性链表的头结点，将s所指结点插入在原第一个结点之前（即s成为第一个结点）
+//也可以认为是将s所指节点插入作为h节点的后继元素
 Status InsFirst(Polynomial &P, Link s, Link h){
     //p指向原来的第一个节点
     Link p = h->next;
@@ -117,6 +134,7 @@ Status InsFirst(Polynomial &P, Link s, Link h){
 }
 
 //已知h指向线性链表的头结点，删除链表中的第一个结点并以q返回
+//也可以认为是删除h所指节点的后继元素
 Status DelFirst(Polynomial &P, Link h, Link &q){
     q = h->next;
     //如果q存在，即链表非空
@@ -220,8 +238,8 @@ void creatPolyn(Polynomial &P, int m){
         scanf("%d,%f",&t.expn,&t.coef);
         if (!LocatElem(P, t, q, compare)) { //q用来接收与t的指数项相等的结点位置或者第一个与t满足判定函数compare>0元素的前驱位置
             //当前链表中不存在t的指数项，生成新的结点并插入链表
-            if (MakeNode(s, t)) {
-                InsFirst(P, s, q);
+            if (MakeNode(s, t)) {  //生成新的节点s
+                InsFirst(P, s, q);  //将节点s插入作为q节点的后继元素
             }
         }
     }
@@ -236,7 +254,7 @@ void PrintPolyn(Polynomial P){
     }
 }
 
-//
+//多项式加法：Pa = Pa+Pb，并销毁一元多项式Pb
 void AddPolyn(Polynomial &Pa, Polynomial &Pb){
     Position ha,hb,pa,pb;
     Term a,b; //用a和b表示链表中的数据元素（是结构体）
@@ -256,7 +274,7 @@ void AddPolyn(Polynomial &Pa, Polynomial &Pb){
                 pa->data.coef += pb->data.coef;
                 //如果Pa中当前元素系数相加后为0，则删除此元素
                 if (pa->data.coef == 0) {
-                    DelFirst(Pa, ha, pa); //删除链表Pa中ha的后继元素，并用Pa返回删除的元素
+                    DelFirst(Pa, ha, pa); //删除链表Pa中ha的后继元素，并用pa返回删除的元素
                     FreeNode(pa);
                 }else{
                     ha = pa;   //若系数不为0，将ha向后移动一位
@@ -268,7 +286,7 @@ void AddPolyn(Polynomial &Pa, Polynomial &Pb){
                 break;
             case 1:    //多项式中Pa当前结点的指数值比pb的大
                 DelFirst(Pb, hb, pb);  //删除Pb中hb的后继元素(即现在的pb)，并用pb返回删除的元素
-                InsFirst(Pa, pb, ha);  //向Pb中插入pb元素，插入位置为ha的后继，原ha的后继pa保持不变
+                InsFirst(Pa, pb, ha);  //向Pa中插入pb元素，插入位置为ha的后继，原ha的后继pa保持不变
                 ha = ha->next; //再将ha向后移动一个位置，ha的后继就又变为pa了
                 pb = NextPos(hb); //移动pb位置为hb的后继
                 break;
@@ -283,6 +301,44 @@ void AddPolyn(Polynomial &Pa, Polynomial &Pb){
     DestoryPolyn(Pb);  //销毁Pb
 }
 
+//按有序判定函数compare的约定，将值为e的节点插入或合并到升序链表P的适当位置
+Status OrderInsertMerge(Polynomial &P, PolyElemType e, int(compare)(PolyElemType,PolyElemType)){
+    Position p,q;
+    if (LocatElem(P, e, p, compare)) {  //在P中找到与e的指数相等的节点
+        p->data.coef+=e.coef;   //计算指数相等的节点合并后系数是否为0
+        if (!p->data.coef) { //如果为0
+            q = PriorPos(P, p);  //获取p指向节点的前驱
+            if (!q) {
+                q = P.header;   //说明p没有前驱，q指向P的头结点
+            }
+            DelFirst(P, q, p);  //删除q节点的后继(即p指向的节点)，并用p进行接收删除的节点
+            FreeNode(p);
+        }
+        return OK;
+    }else{  //没有找到与e指数相等的节点，但是用p返回了第一个与e符合compare>0节点的前驱
+        if (MakeNode(q, e)) {  //用e值生成一个新节点，并用q指向这个新节点
+            InsFirst(P, q, p); //将q指向的节点插入链表并作为p的后继元素
+            return OK;
+        }else{
+            return ERROR;  //生成节点失败
+        }
+    }
+}
 
+//另一种多项式加法
+void AddPolyn1(Polynomial &Pa, Polynomial &Pb){
+    Position p = GetHeader(Pb)->next;  //p指向Pb的第一个节点
+    Term t;
+    while (p) {
+        t = GetCurElem(p);
+        OrderInsertMerge(Pa, t, compare);
+        p = p->next;
+    }
+    DestoryPolyn(Pb);
+}
+
+void Opposite(Polynomial P){
+    
+}
 
 
