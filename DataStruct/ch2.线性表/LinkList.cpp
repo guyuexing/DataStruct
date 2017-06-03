@@ -73,8 +73,8 @@ int ListLength(LinkList L){
     //如果q存在不为空，继续循环计数
     while (q) {
         //q赋值为q指向的下一个结点
-        q = q->next;
         i++;
+        q = q->next;
     }
     return i;
 }
