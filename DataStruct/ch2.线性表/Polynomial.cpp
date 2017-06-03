@@ -337,8 +337,49 @@ void AddPolyn1(Polynomial &Pa, Polynomial &Pb){
     DestoryPolyn(Pb);
 }
 
+//一元多项式系数取反
 void Opposite(Polynomial P){
-    
+    Position p = P.header->next;
+    while (p) {
+        p->data.coef *= -1;
+        p = NextPos(p);
+    }
 }
 
+//多项式减法，Pa = Pa-Pb，并销毁Pb
+void SubtractPolyn(Polynomial &Pa, Polynomial &Pb){
+    Opposite(Pb);
+    AddPolyn(Pa, Pb);
+}
 
+//多项式乘法，Pa=Pa*Pb，并销毁Pb
+void MultiplyPolyn(Polynomial &Pa, Polynomial &Pb){
+    //多项式乘法需要借助第三个链表
+    Polynomial Pc;
+    InitPolyn(Pc);
+    Position pa = NextPos(GetHeader(Pa));
+    Position pb;
+    Term a,b,c;
+    while (pa) {
+        //每完成对Pb的一次循环遍历，需要将pb置于原位(即Pb的第一个节点处)
+        pb = NextPos(GetHeader(Pb));
+        //取出当前pa指向节点的数据元素
+        a = GetCurElem(pa);
+        while (pb) {
+            //取出当前pb指向节点的数据元素
+            b = GetCurElem(pb);
+            c.coef = a.coef*b.coef;
+            c.expn = a.expn+b.expn;
+            //将c数据元素按照compare的函数关系插入到Pc中
+            OrderInsertMerge(Pc, c, compare);
+            pb = pb->next;
+        }
+        pa = pa->next;
+    }
+    DestoryPolyn(Pb);  //销毁Pb
+    ClearPolyn(Pa);   //清空Pa
+    Pa.header = Pc.header;
+    Pa.tail = Pc.tail;
+    Pa.len = Pc.len;
+    //函数运行结束，Pc局部变量会自动销毁，但是Pc中的节点由Pa指向了因此不会销毁
+}
