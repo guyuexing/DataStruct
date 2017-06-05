@@ -7,10 +7,13 @@
 //
 
 #include <iostream>
-#include "Algo3_1.hpp"
+//#include "Algo3_1.hpp"
+#include "Algo3_2.hpp"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    main3_1();
+//    main3_1();
+    main3_2();
+    
     return 0;
 }

@@ -10,7 +10,10 @@
 
 #include "PublicHeader.h"
 
-typedef int SElemType;
+//typedef int SElemType;
+
+typedef char SElemType;
+
 #define STACK_INIT_SIZE 10  //存储空间初始分配量
 #define STACKINCREMENT  2   //存储空间分配增量
 
@@ -21,7 +24,7 @@ struct SqStack {
     int stackSize;    //当前已分配的存储空间，以元素为单位
 };
 
-//栈的链式表示-链栈操作参考OptimalLinkList
+//栈的链式表示-链栈操作参考OptimalLinkList，栈顶指针就是head，栈底指针就是tail，每次push和pop都是在head处进行
 
 
 Status InitStack(SqStack &S);
