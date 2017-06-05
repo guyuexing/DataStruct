@@ -8,12 +8,13 @@
 
 #include <iostream>
 //#include "Algo3_1.hpp"
-#include "Algo3_2.hpp"
+//#include "Algo3_2.hpp"
+#include "Algo3_3.hpp"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
 //    main3_1();
-    main3_2();
-    
+//    main3_2();
+    main3_3();
     return 0;
 }

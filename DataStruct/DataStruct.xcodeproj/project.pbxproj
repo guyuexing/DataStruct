@@ -15,6 +15,7 @@
 		EC1D9FFD1ED32FA800C51A89 /* OptimalLinkList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC1D9FFB1ED32FA800C51A89 /* OptimalLinkList.cpp */; };
 		EC2CDFCD1EC4BBA100AA4257 /* Algo2_6.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC2CDFCB1EC4BBA000AA4257 /* Algo2_6.cpp */; };
 		EC5BAAD51EDF0A5800A307FC /* Polynomial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC5BAAD31EDF0A5800A307FC /* Polynomial.cpp */; };
+		EC6A06661EE5A0DA008C8802 /* Algo3_3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC6A06641EE5A0DA008C8802 /* Algo3_3.cpp */; };
 		EC7166E91EAB51B700FF613C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC7166E81EAB51B700FF613C /* main.cpp */; };
 		EC7166ED1EAB51C400FF613C /* Triplet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC7166E01EAB47D400FF613C /* Triplet.cpp */; };
 		EC7166F01EAB5CDE00FF613C /* 算法的时间量度.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC7166EF1EAB5CDE00FF613C /* 算法的时间量度.cpp */; };
@@ -77,6 +78,8 @@
 		EC2CDFCC1EC4BBA100AA4257 /* Algo2_6.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Algo2_6.hpp; sourceTree = "<group>"; };
 		EC5BAAD31EDF0A5800A307FC /* Polynomial.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Polynomial.cpp; sourceTree = "<group>"; };
 		EC5BAAD41EDF0A5800A307FC /* Polynomial.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Polynomial.hpp; sourceTree = "<group>"; };
+		EC6A06641EE5A0DA008C8802 /* Algo3_3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Algo3_3.cpp; sourceTree = "<group>"; };
+		EC6A06651EE5A0DA008C8802 /* Algo3_3.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Algo3_3.hpp; sourceTree = "<group>"; };
 		EC7166E01EAB47D400FF613C /* Triplet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Triplet.cpp; path = ../DataStruct/Triplet.cpp; sourceTree = "<group>"; };
 		EC7166E61EAB51B700FF613C /* ch1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ch1; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC7166E81EAB51B700FF613C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -156,6 +159,8 @@
 				EB4513831EE29BE40084B648 /* Algo3_1.cpp */,
 				EB5F9D291EE58CC500AB9970 /* Algo3_2.hpp */,
 				EB5F9D281EE58CC500AB9970 /* Algo3_2.cpp */,
+				EC6A06651EE5A0DA008C8802 /* Algo3_3.hpp */,
+				EC6A06641EE5A0DA008C8802 /* Algo3_3.cpp */,
 			);
 			name = "具体算法";
 			sourceTree = "<group>";
@@ -352,6 +357,7 @@
 				EB4513851EE29BE40084B648 /* Algo3_1.cpp in Sources */,
 				EB4513821EE275A60084B648 /* SqStack.cpp in Sources */,
 				EB45137A1EE273010084B648 /* main.cpp in Sources */,
+				EC6A06661EE5A0DA008C8802 /* Algo3_3.cpp in Sources */,
 				EB5F9D2A1EE58CC500AB9970 /* Algo3_2.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
