@@ -14,6 +14,7 @@ void copy(SElemType c){
     fputc(c, fp);
 }
 
+//行编辑程序
 void LineEdit(){
     SqStack S;
     InitStack(S);

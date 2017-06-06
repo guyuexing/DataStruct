@@ -8,6 +8,7 @@
 
 #include "Algo3_2.hpp"
 
+//括号匹配算法
 void check(){
     SElemType ch[80], *p, e;
     SqStack S;

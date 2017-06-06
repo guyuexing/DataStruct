@@ -29,6 +29,8 @@
 		ECD4993E1EAC76A1002B0C34 /* Algo2_1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECD4993C1EAC76A1002B0C34 /* Algo2_1.cpp */; };
 		ECD499411EAC827C002B0C34 /* Algo2_2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECD4993F1EAC827C002B0C34 /* Algo2_2.cpp */; };
 		ECDD9C9B1EB242C3001F4645 /* LinkList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECDD9C991EB242C3001F4645 /* LinkList.cpp */; };
+		ECEF2DBD1EE6FC3C0052E319 /* Algo3_4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECEF2DBB1EE6FC3C0052E319 /* Algo3_4.cpp */; };
+		ECEF2DC01EE7024D0052E319 /* Algo3_5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECEF2DBE1EE7024D0052E319 /* Algo3_5.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -105,6 +107,10 @@
 		ECD499401EAC827C002B0C34 /* Algo2_2.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Algo2_2.hpp; sourceTree = "<group>"; };
 		ECDD9C991EB242C3001F4645 /* LinkList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LinkList.cpp; sourceTree = "<group>"; };
 		ECDD9C9A1EB242C3001F4645 /* LinkList.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LinkList.hpp; sourceTree = "<group>"; };
+		ECEF2DBB1EE6FC3C0052E319 /* Algo3_4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Algo3_4.cpp; sourceTree = "<group>"; };
+		ECEF2DBC1EE6FC3C0052E319 /* Algo3_4.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Algo3_4.hpp; sourceTree = "<group>"; };
+		ECEF2DBE1EE7024D0052E319 /* Algo3_5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Algo3_5.cpp; sourceTree = "<group>"; };
+		ECEF2DBF1EE7024D0052E319 /* Algo3_5.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Algo3_5.hpp; sourceTree = "<group>"; };
 		ECF5A0741EA7C5B7004123E6 /* PublicHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicHeader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -161,6 +167,10 @@
 				EB5F9D281EE58CC500AB9970 /* Algo3_2.cpp */,
 				EC6A06651EE5A0DA008C8802 /* Algo3_3.hpp */,
 				EC6A06641EE5A0DA008C8802 /* Algo3_3.cpp */,
+				ECEF2DBC1EE6FC3C0052E319 /* Algo3_4.hpp */,
+				ECEF2DBB1EE6FC3C0052E319 /* Algo3_4.cpp */,
+				ECEF2DBF1EE7024D0052E319 /* Algo3_5.hpp */,
+				ECEF2DBE1EE7024D0052E319 /* Algo3_5.cpp */,
 			);
 			name = "具体算法";
 			sourceTree = "<group>";
@@ -357,7 +367,9 @@
 				EB4513851EE29BE40084B648 /* Algo3_1.cpp in Sources */,
 				EB4513821EE275A60084B648 /* SqStack.cpp in Sources */,
 				EB45137A1EE273010084B648 /* main.cpp in Sources */,
+				ECEF2DBD1EE6FC3C0052E319 /* Algo3_4.cpp in Sources */,
 				EC6A06661EE5A0DA008C8802 /* Algo3_3.cpp in Sources */,
+				ECEF2DC01EE7024D0052E319 /* Algo3_5.cpp in Sources */,
 				EB5F9D2A1EE58CC500AB9970 /* Algo3_2.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
