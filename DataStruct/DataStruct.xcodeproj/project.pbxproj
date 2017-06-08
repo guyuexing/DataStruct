@@ -31,6 +31,7 @@
 		ECDD9C9B1EB242C3001F4645 /* LinkList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECDD9C991EB242C3001F4645 /* LinkList.cpp */; };
 		ECEF2DBD1EE6FC3C0052E319 /* Algo3_4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECEF2DBB1EE6FC3C0052E319 /* Algo3_4.cpp */; };
 		ECEF2DC01EE7024D0052E319 /* Algo3_5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECEF2DBE1EE7024D0052E319 /* Algo3_5.cpp */; };
+		ECFA10B11EE99658003912E9 /* LinkQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECFA10AF1EE99658003912E9 /* LinkQueue.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -112,6 +113,8 @@
 		ECEF2DBE1EE7024D0052E319 /* Algo3_5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Algo3_5.cpp; sourceTree = "<group>"; };
 		ECEF2DBF1EE7024D0052E319 /* Algo3_5.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Algo3_5.hpp; sourceTree = "<group>"; };
 		ECF5A0741EA7C5B7004123E6 /* PublicHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicHeader.h; sourceTree = "<group>"; };
+		ECFA10AF1EE99658003912E9 /* LinkQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LinkQueue.cpp; sourceTree = "<group>"; };
+		ECFA10B01EE99658003912E9 /* LinkQueue.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LinkQueue.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +157,8 @@
 			children = (
 				EB4513811EE275A60084B648 /* SqStack.hpp */,
 				EB4513801EE275A60084B648 /* SqStack.cpp */,
+				ECFA10B01EE99658003912E9 /* LinkQueue.hpp */,
+				ECFA10AF1EE99658003912E9 /* LinkQueue.cpp */,
 			);
 			name = "数据类型定义";
 			sourceTree = "<group>";
@@ -365,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB4513851EE29BE40084B648 /* Algo3_1.cpp in Sources */,
+				ECFA10B11EE99658003912E9 /* LinkQueue.cpp in Sources */,
 				EB4513821EE275A60084B648 /* SqStack.cpp in Sources */,
 				EB45137A1EE273010084B648 /* main.cpp in Sources */,
 				ECEF2DBD1EE6FC3C0052E319 /* Algo3_4.cpp in Sources */,
