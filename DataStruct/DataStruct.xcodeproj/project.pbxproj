@@ -13,6 +13,8 @@
 		EB5F9D2A1EE58CC500AB9970 /* Algo3_2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB5F9D281EE58CC500AB9970 /* Algo3_2.cpp */; };
 		EB7EFEEC1EEBBCFD001BEF76 /* SqQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB7EFEEA1EEBBCFD001BEF76 /* SqQueue.cpp */; };
 		EB7EFEEE1EEBCD6D001BEF76 /* SqQueue_1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB7EFEED1EEBCD6D001BEF76 /* SqQueue_1.cpp */; };
+		EB7EFEF61EEBE737001BEF76 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB7EFEF51EEBE737001BEF76 /* main.cpp */; };
+		EB7EFEFE1EEBE785001BEF76 /* SString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB7EFEFC1EEBE785001BEF76 /* SString.cpp */; };
 		EC0EB3681ECCA11F004D0F02 /* DuLinkList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC0EB3661ECCA11F004D0F02 /* DuLinkList.cpp */; };
 		EC1D9FFD1ED32FA800C51A89 /* OptimalLinkList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC1D9FFB1ED32FA800C51A89 /* OptimalLinkList.cpp */; };
 		EC2CDFCD1EC4BBA100AA4257 /* Algo2_6.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC2CDFCB1EC4BBA000AA4257 /* Algo2_6.cpp */; };
@@ -38,6 +40,15 @@
 
 /* Begin PBXCopyFilesBuildPhase section */
 		EB4513751EE273010084B648 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		EB7EFEF11EEBE737001BEF76 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -78,6 +89,10 @@
 		EB7EFEEA1EEBBCFD001BEF76 /* SqQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SqQueue.cpp; sourceTree = "<group>"; };
 		EB7EFEEB1EEBBCFD001BEF76 /* SqQueue.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SqQueue.hpp; sourceTree = "<group>"; };
 		EB7EFEED1EEBCD6D001BEF76 /* SqQueue_1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SqQueue_1.cpp; sourceTree = "<group>"; };
+		EB7EFEF31EEBE737001BEF76 /* ch4.串 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "ch4.串"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB7EFEF51EEBE737001BEF76 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		EB7EFEFC1EEBE785001BEF76 /* SString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SString.cpp; sourceTree = "<group>"; };
+		EB7EFEFD1EEBE785001BEF76 /* SString.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SString.hpp; sourceTree = "<group>"; };
 		EC0EB3661ECCA11F004D0F02 /* DuLinkList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DuLinkList.cpp; sourceTree = "<group>"; };
 		EC0EB3671ECCA11F004D0F02 /* DuLinkList.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DuLinkList.hpp; sourceTree = "<group>"; };
 		EC1D9FFB1ED32FA800C51A89 /* OptimalLinkList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OptimalLinkList.cpp; sourceTree = "<group>"; };
@@ -124,6 +139,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		EB4513741EE273010084B648 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB7EFEF01EEBE737001BEF76 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -184,6 +206,32 @@
 				ECEF2DBB1EE6FC3C0052E319 /* Algo3_4.cpp */,
 				ECEF2DBF1EE7024D0052E319 /* Algo3_5.hpp */,
 				ECEF2DBE1EE7024D0052E319 /* Algo3_5.cpp */,
+			);
+			name = "具体算法";
+			sourceTree = "<group>";
+		};
+		EB7EFEF41EEBE737001BEF76 /* ch4.串 */ = {
+			isa = PBXGroup;
+			children = (
+				EB7EFEFA1EEBE741001BEF76 /* 数据类型定义 */,
+				EB7EFEFB1EEBE74C001BEF76 /* 具体算法 */,
+				EB7EFEF51EEBE737001BEF76 /* main.cpp */,
+			);
+			path = "ch4.串";
+			sourceTree = "<group>";
+		};
+		EB7EFEFA1EEBE741001BEF76 /* 数据类型定义 */ = {
+			isa = PBXGroup;
+			children = (
+				EB7EFEFD1EEBE785001BEF76 /* SString.hpp */,
+				EB7EFEFC1EEBE785001BEF76 /* SString.cpp */,
+			);
+			name = "数据类型定义";
+			sourceTree = "<group>";
+		};
+		EB7EFEFB1EEBE74C001BEF76 /* 具体算法 */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			name = "具体算法";
 			sourceTree = "<group>";
@@ -256,6 +304,7 @@
 				EC7166E71EAB51B700FF613C /* ch1 */,
 				EC7166F61EAB758900FF613C /* ch2.线性表 */,
 				EB4513781EE273010084B648 /* ch3.栈和队列 */,
+				EB7EFEF41EEBE737001BEF76 /* ch4.串 */,
 				ECF5A06B1EA7C4B3004123E6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -266,6 +315,7 @@
 				EC7166E61EAB51B700FF613C /* ch1 */,
 				EC7166F51EAB758900FF613C /* ch2.线性表 */,
 				EB4513771EE273010084B648 /* ch3.栈和队列 */,
+				EB7EFEF31EEBE737001BEF76 /* ch4.串 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -296,6 +346,23 @@
 			name = "ch3.栈和队列";
 			productName = "ch3.栈和队列";
 			productReference = EB4513771EE273010084B648 /* ch3.栈和队列 */;
+			productType = "com.apple.product-type.tool";
+		};
+		EB7EFEF21EEBE737001BEF76 /* ch4.串 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB7EFEF71EEBE737001BEF76 /* Build configuration list for PBXNativeTarget "ch4.串" */;
+			buildPhases = (
+				EB7EFEEF1EEBE737001BEF76 /* Sources */,
+				EB7EFEF01EEBE737001BEF76 /* Frameworks */,
+				EB7EFEF11EEBE737001BEF76 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ch4.串";
+			productName = "ch4.串";
+			productReference = EB7EFEF31EEBE737001BEF76 /* ch4.串 */;
 			productType = "com.apple.product-type.tool";
 		};
 		EC7166E51EAB51B700FF613C /* ch1 */ = {
@@ -345,6 +412,10 @@
 						CreatedOnToolsVersion = 8.3.2;
 						ProvisioningStyle = Automatic;
 					};
+					EB7EFEF21EEBE737001BEF76 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
 					EC7166E51EAB51B700FF613C = {
 						CreatedOnToolsVersion = 7.2.1;
 					};
@@ -368,6 +439,7 @@
 				EC7166E51EAB51B700FF613C /* ch1 */,
 				EC7166F41EAB758900FF613C /* ch2.线性表 */,
 				EB4513761EE273010084B648 /* ch3.栈和队列 */,
+				EB7EFEF21EEBE737001BEF76 /* ch4.串 */,
 			);
 		};
 /* End PBXProject section */
@@ -387,6 +459,15 @@
 				ECEF2DC01EE7024D0052E319 /* Algo3_5.cpp in Sources */,
 				EB7EFEEC1EEBBCFD001BEF76 /* SqQueue.cpp in Sources */,
 				EB5F9D2A1EE58CC500AB9970 /* Algo3_2.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB7EFEEF1EEBE737001BEF76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB7EFEFE1EEBE785001BEF76 /* SString.cpp in Sources */,
+				EB7EFEF61EEBE737001BEF76 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +519,32 @@
 			name = Debug;
 		};
 		EB45137C1EE273010084B648 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		EB7EFEF81EEBE737001BEF76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EB7EFEF91EEBE737001BEF76 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
@@ -568,6 +675,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		EB7EFEF71EEBE737001BEF76 /* Build configuration list for PBXNativeTarget "ch4.串" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB7EFEF81EEBE737001BEF76 /* Debug */,
+				EB7EFEF91EEBE737001BEF76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		EC7166EA1EAB51B700FF613C /* Build configuration list for PBXNativeTarget "ch1" */ = {
 			isa = XCConfigurationList;
