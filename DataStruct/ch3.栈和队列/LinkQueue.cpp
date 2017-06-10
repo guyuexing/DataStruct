@@ -26,6 +26,7 @@ Status DestoryQueue(LinkQueue &Q){
     return OK;
 }
 
+//清空队列只是清空队列中的元素，但是队列的头结点还是需要保留
 Status ClearQueue(LinkQueue &Q){
     QueuePtr p,q;
     p = Q.front->next; //p指向头结点的下一个结点
@@ -62,7 +63,7 @@ Status GerHead(LinkQueue Q, QElemType &e){
     return OK;
 }
 
-//插入队尾
+//插入队尾,对于链式的存储结构，队列的尾指针指向最后一个元素
 Status EnQueue(LinkQueue &Q,QElemType e){
     QueuePtr p = (QueuePtr)malloc(sizeof(QNode));
     if (!p) {
