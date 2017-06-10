@@ -11,6 +11,8 @@
 		EB4513821EE275A60084B648 /* SqStack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB4513801EE275A60084B648 /* SqStack.cpp */; };
 		EB4513851EE29BE40084B648 /* Algo3_1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB4513831EE29BE40084B648 /* Algo3_1.cpp */; };
 		EB5F9D2A1EE58CC500AB9970 /* Algo3_2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB5F9D281EE58CC500AB9970 /* Algo3_2.cpp */; };
+		EB7EFEEC1EEBBCFD001BEF76 /* SqQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB7EFEEA1EEBBCFD001BEF76 /* SqQueue.cpp */; };
+		EB7EFEEE1EEBCD6D001BEF76 /* SqQueue_1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB7EFEED1EEBCD6D001BEF76 /* SqQueue_1.cpp */; };
 		EC0EB3681ECCA11F004D0F02 /* DuLinkList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC0EB3661ECCA11F004D0F02 /* DuLinkList.cpp */; };
 		EC1D9FFD1ED32FA800C51A89 /* OptimalLinkList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC1D9FFB1ED32FA800C51A89 /* OptimalLinkList.cpp */; };
 		EC2CDFCD1EC4BBA100AA4257 /* Algo2_6.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC2CDFCB1EC4BBA000AA4257 /* Algo2_6.cpp */; };
@@ -73,6 +75,9 @@
 		EB4513841EE29BE40084B648 /* Algo3_1.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Algo3_1.hpp; sourceTree = "<group>"; };
 		EB5F9D281EE58CC500AB9970 /* Algo3_2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Algo3_2.cpp; sourceTree = "<group>"; };
 		EB5F9D291EE58CC500AB9970 /* Algo3_2.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Algo3_2.hpp; sourceTree = "<group>"; };
+		EB7EFEEA1EEBBCFD001BEF76 /* SqQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SqQueue.cpp; sourceTree = "<group>"; };
+		EB7EFEEB1EEBBCFD001BEF76 /* SqQueue.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SqQueue.hpp; sourceTree = "<group>"; };
+		EB7EFEED1EEBCD6D001BEF76 /* SqQueue_1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SqQueue_1.cpp; sourceTree = "<group>"; };
 		EC0EB3661ECCA11F004D0F02 /* DuLinkList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DuLinkList.cpp; sourceTree = "<group>"; };
 		EC0EB3671ECCA11F004D0F02 /* DuLinkList.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DuLinkList.hpp; sourceTree = "<group>"; };
 		EC1D9FFB1ED32FA800C51A89 /* OptimalLinkList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OptimalLinkList.cpp; sourceTree = "<group>"; };
@@ -159,6 +164,9 @@
 				EB4513801EE275A60084B648 /* SqStack.cpp */,
 				ECFA10B01EE99658003912E9 /* LinkQueue.hpp */,
 				ECFA10AF1EE99658003912E9 /* LinkQueue.cpp */,
+				EB7EFEEB1EEBBCFD001BEF76 /* SqQueue.hpp */,
+				EB7EFEEA1EEBBCFD001BEF76 /* SqQueue.cpp */,
+				EB7EFEED1EEBCD6D001BEF76 /* SqQueue_1.cpp */,
 			);
 			name = "数据类型定义";
 			sourceTree = "<group>";
@@ -370,12 +378,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB4513851EE29BE40084B648 /* Algo3_1.cpp in Sources */,
+				EB7EFEEE1EEBCD6D001BEF76 /* SqQueue_1.cpp in Sources */,
 				ECFA10B11EE99658003912E9 /* LinkQueue.cpp in Sources */,
 				EB4513821EE275A60084B648 /* SqStack.cpp in Sources */,
 				EB45137A1EE273010084B648 /* main.cpp in Sources */,
 				ECEF2DBD1EE6FC3C0052E319 /* Algo3_4.cpp in Sources */,
 				EC6A06661EE5A0DA008C8802 /* Algo3_3.cpp in Sources */,
 				ECEF2DC01EE7024D0052E319 /* Algo3_5.cpp in Sources */,
+				EB7EFEEC1EEBBCFD001BEF76 /* SqQueue.cpp in Sources */,
 				EB5F9D2A1EE58CC500AB9970 /* Algo3_2.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
