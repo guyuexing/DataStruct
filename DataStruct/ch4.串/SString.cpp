@@ -10,3 +10,114 @@
 //SString是数组类型，故不需引用类型
 
 #include "SString.hpp"
+
+//生成一个其值等于chars的串T
+Status StrAssign(SString T, char *chars){
+    if (strlen(chars)>MAXSTRLEN) { //要保存的串超过了T的长度
+        return ERROR;
+    }else{
+        T[0] = strlen(chars);  //串T的第一个位置保存字符串的长度
+        for (int i=1; i<=T[0]; i++) {
+            T[i] = *(chars+i-1);
+        }
+        return OK;
+    }
+}
+
+//由串S复制得串T
+Status StrCopy(SString T, SString S){
+    for (int i=0; i<S[0]; i++) {
+        T[i] = S[i];
+    }
+    return OK;
+}
+
+//若串为空串则返回True，否则返回False
+Status StrEmpty(SString T){
+    if (T[0]) {
+        return FALSE;
+    }else{
+        return TRUE;
+    }
+}
+
+//返回串T的长度
+int StrLength(SString T){
+    return T[0];
+}
+
+//若串T,S存在，若T>S, 返回值>0，T=S,返回值=0，T<S，返回值<0
+int StrCompare(SString T, SString S){
+    for (int i=1; i<=T[0]&&i<=S[0]; i++) {
+        if (T[i]!=S[i]) {
+            return T[i]-S[i];
+        }
+    }
+    return T[0]-S[0];
+}
+
+//将S清为空串
+Status CleanStr(SString T){
+    T[0] = 0; //令串长等于0
+    return OK;
+}
+
+//用T返回由S1和S2联结而成的新串，若未截断，返回True，否则返回False
+Status Concat(SString T, SString S1, SString S2){
+    if (S1[0]+S2[0]<=MAXSTRLEN) { //字符串未截断
+        T[0] = S1[0]+S2[0];
+        for (int i=1; i<=S1[0]; i++) {
+            T[i] = S1[i];
+        }
+        for (int i=1; i<=S2[0]; i++) {
+            T[S1[0]+i] = S2[i];
+        }
+        return OK;
+    }else{  //字符串截断
+        T[0] = MAXSTRLEN;
+        for (int i=1; i<=S1[0]&&i<=MAXSTRLEN; i++) {
+            T[i] = S1[i];
+        }
+        for (int i=1; i<=MAXSTRLEN-S1[0]; i++) {
+            T[S1[0]+i] = S2[i];  //进入了这个循环说明MAXSTRLEN-S1[0]>=1
+        }
+        return FALSE;
+    }
+}
+
+//用sub串返回串T的第pos个字符起长度为len的子串
+Status SubString(SString T, SString sub, int pos, int len){
+    
+    if (pos<1||pos>T[0]||len<0||pos+len-1>T[0]) {
+        return ERROR;
+    }
+    for (int i=1; i<=len; i++) {
+        sub[i] = T[pos+len-1];
+    }
+    sub[0] = len;
+    return OK;
+    
+    //我的写法
+    int to;
+    if (pos+len-1>MAXSTRLEN) {
+        to = MAXSTRLEN;
+    }else{
+        to = pos+len-1;
+    }
+    for (int i=pos,j=1; i<=to&&j<=MAXSTRLEN; i++,j++) {
+        sub[j] = T[i];
+    }
+    return OK;
+}
+
+
+
+
+
+
+
+
+
+
+
+
