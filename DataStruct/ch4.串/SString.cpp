@@ -110,7 +110,23 @@ Status SubString(SString T, SString sub, int pos, int len){
     return OK;
 }
 
-
+//若主串T中第pos个字符之后存在与S相等的子串，则返回第一个这样的子串在T中的位置，否则返回0
+//算法4.1
+int Index4_1(SString T, SString S, int pos){
+    int i = pos;
+    if (pos>0) {
+        while (i<=T[0]-S[0]+1) { //i如果超过了此范围那么截取的字符串长度与S不等
+            SString sub; //sub用来接收截取的字符串
+            SubString(T, sub, i, S[0]);
+            if (StrCompare(sub, S)==0) {
+                return i;
+            }else{
+                i++;
+            }
+        }
+    }
+    return 0;
+}
 
 
 
