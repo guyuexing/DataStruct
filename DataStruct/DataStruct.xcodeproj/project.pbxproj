@@ -16,6 +16,7 @@
 		EB7EFEF61EEBE737001BEF76 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB7EFEF51EEBE737001BEF76 /* main.cpp */; };
 		EB7EFEFE1EEBE785001BEF76 /* SString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB7EFEFC1EEBE785001BEF76 /* SString.cpp */; };
 		EC0EB3681ECCA11F004D0F02 /* DuLinkList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC0EB3661ECCA11F004D0F02 /* DuLinkList.cpp */; };
+		EC1612221EF96618001161D0 /* HString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC1612201EF96618001161D0 /* HString.cpp */; };
 		EC1D9FFD1ED32FA800C51A89 /* OptimalLinkList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC1D9FFB1ED32FA800C51A89 /* OptimalLinkList.cpp */; };
 		EC2CDFCD1EC4BBA100AA4257 /* Algo2_6.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC2CDFCB1EC4BBA000AA4257 /* Algo2_6.cpp */; };
 		EC5BAAD51EDF0A5800A307FC /* Polynomial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC5BAAD31EDF0A5800A307FC /* Polynomial.cpp */; };
@@ -95,6 +96,8 @@
 		EB7EFEFD1EEBE785001BEF76 /* SString.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SString.hpp; sourceTree = "<group>"; };
 		EC0EB3661ECCA11F004D0F02 /* DuLinkList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DuLinkList.cpp; sourceTree = "<group>"; };
 		EC0EB3671ECCA11F004D0F02 /* DuLinkList.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DuLinkList.hpp; sourceTree = "<group>"; };
+		EC1612201EF96618001161D0 /* HString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HString.cpp; sourceTree = "<group>"; };
+		EC1612211EF96618001161D0 /* HString.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HString.hpp; sourceTree = "<group>"; };
 		EC1D9FFB1ED32FA800C51A89 /* OptimalLinkList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OptimalLinkList.cpp; sourceTree = "<group>"; };
 		EC1D9FFC1ED32FA800C51A89 /* OptimalLinkList.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OptimalLinkList.hpp; sourceTree = "<group>"; };
 		EC2CDFCB1EC4BBA000AA4257 /* Algo2_6.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Algo2_6.cpp; sourceTree = "<group>"; };
@@ -225,6 +228,8 @@
 			children = (
 				EB7EFEFD1EEBE785001BEF76 /* SString.hpp */,
 				EB7EFEFC1EEBE785001BEF76 /* SString.cpp */,
+				EC1612211EF96618001161D0 /* HString.hpp */,
+				EC1612201EF96618001161D0 /* HString.cpp */,
 			);
 			name = "数据类型定义";
 			sourceTree = "<group>";
@@ -467,6 +472,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB7EFEFE1EEBE785001BEF76 /* SString.cpp in Sources */,
+				EC1612221EF96618001161D0 /* HString.cpp in Sources */,
 				EB7EFEF61EEBE737001BEF76 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -683,6 +689,7 @@
 				EB7EFEF91EEBE737001BEF76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EC7166EA1EAB51B700FF613C /* Build configuration list for PBXNativeTarget "ch1" */ = {
 			isa = XCConfigurationList;

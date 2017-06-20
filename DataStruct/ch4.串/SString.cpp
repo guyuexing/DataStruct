@@ -26,7 +26,7 @@ Status StrAssign(SString T, char *chars){
 
 //由串S复制得串T
 Status StrCopy(SString T, SString S){
-    for (int i=0; i<S[0]; i++) {
+    for (int i=0; i<=S[0]; i++) {
         T[i] = S[i];
     }
     return OK;
@@ -92,7 +92,7 @@ Status SubString(SString T, SString sub, int pos, int len){
         return ERROR;
     }
     for (int i=1; i<=len; i++) {
-        sub[i] = T[pos+len-1];
+        sub[i] = T[pos+i-1];
     }
     sub[0] = len;
     return OK;
@@ -128,7 +128,26 @@ int Index4_1(SString T, SString S, int pos){
     return 0;
 }
 
-
+//在串T的第pos个字符之前插入串S
+Status StrInsert(SString T, int pos, SString S){
+    if (pos<1 || pos>T[0]+1) {
+        return ERROR;
+    }
+    if (T[0]+S[0]<=MAXSTRLEN) { //完全插入
+        for (int i=T[0]; i>=pos; i--) {
+            T[i+S[0]] = T[i];
+        }
+        for (int j=pos; j<S[0]+pos; j++) {
+            T[j] = S[j-pos+1];
+        }
+        T[0] += S[0];
+    }else{ //部分插入
+        for (int i=MAXSTRLEN; i>=pos; i++) {
+//            T[i] = 
+        }
+    }
+    return OK;
+}
 
 
 
