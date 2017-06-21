@@ -29,6 +29,7 @@
 		EC83DB2C1ED872EB0006AC93 /* Algo2_7.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC83DB2A1ED872EB0006AC93 /* Algo2_7.cpp */; };
 		EC917D661EBA253D0026B9E1 /* SLinkList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC917D641EBA253D0026B9E1 /* SLinkList.cpp */; };
 		ECA191E51EAFA4B800960C5B /* Algo2_3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECA191E31EAFA4B800960C5B /* Algo2_3.cpp */; };
+		ECB706281EFABAC9003E7DA2 /* LString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECB706261EFABAC9003E7DA2 /* LString.cpp */; };
 		ECC44ED51EB8CF260049F1EE /* Algo2_4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECC44ED31EB8CF260049F1EE /* Algo2_4.cpp */; };
 		ECC44ED81EB8D5E10049F1EE /* Algo2_5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECC44ED61EB8D5E10049F1EE /* Algo2_5.cpp */; };
 		ECD4993E1EAC76A1002B0C34 /* Algo2_1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECD4993C1EAC76A1002B0C34 /* Algo2_1.cpp */; };
@@ -121,6 +122,8 @@
 		EC917D651EBA253D0026B9E1 /* SLinkList.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SLinkList.hpp; sourceTree = "<group>"; };
 		ECA191E31EAFA4B800960C5B /* Algo2_3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Algo2_3.cpp; sourceTree = "<group>"; };
 		ECA191E41EAFA4B800960C5B /* Algo2_3.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Algo2_3.hpp; sourceTree = "<group>"; };
+		ECB706261EFABAC9003E7DA2 /* LString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LString.cpp; sourceTree = "<group>"; };
+		ECB706271EFABAC9003E7DA2 /* LString.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LString.hpp; sourceTree = "<group>"; };
 		ECC44ED31EB8CF260049F1EE /* Algo2_4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Algo2_4.cpp; sourceTree = "<group>"; };
 		ECC44ED41EB8CF260049F1EE /* Algo2_4.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Algo2_4.hpp; sourceTree = "<group>"; };
 		ECC44ED61EB8D5E10049F1EE /* Algo2_5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Algo2_5.cpp; sourceTree = "<group>"; };
@@ -230,6 +233,8 @@
 				EB7EFEFC1EEBE785001BEF76 /* SString.cpp */,
 				EC1612211EF96618001161D0 /* HString.hpp */,
 				EC1612201EF96618001161D0 /* HString.cpp */,
+				ECB706271EFABAC9003E7DA2 /* LString.hpp */,
+				ECB706261EFABAC9003E7DA2 /* LString.cpp */,
 			);
 			name = "数据类型定义";
 			sourceTree = "<group>";
@@ -474,6 +479,7 @@
 				EB7EFEFE1EEBE785001BEF76 /* SString.cpp in Sources */,
 				EC1612221EF96618001161D0 /* HString.cpp in Sources */,
 				EB7EFEF61EEBE737001BEF76 /* main.cpp in Sources */,
+				ECB706281EFABAC9003E7DA2 /* LString.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

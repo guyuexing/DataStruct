@@ -125,7 +125,7 @@ Status SubString(HString &Sub, HString T, int pos, int len){
 }
 
 //在串T的第pos个字符之前插入串S
-Status Insert(HString &T, int pos, HString S){
+Status StrInsert(HString &T, int pos, HString S){
     if (pos<1 || pos>T.length+1) { //若pos=T.length+1表示将S插入T的末尾
         return ERROR;
     }

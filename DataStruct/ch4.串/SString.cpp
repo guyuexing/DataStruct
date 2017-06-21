@@ -141,10 +141,14 @@ Status StrInsert(SString T, int pos, SString S){
             T[j] = S[j-pos+1];
         }
         T[0] += S[0];
-    }else{ //部分插入
+    }else{ //部分插入,此部分代码似乎有问题，不太理解
         for (int i=MAXSTRLEN; i>=pos; i++) {
-//            T[i] = 
+            T[i] = T[i-S[0]];
         }
+        for (int j=pos; j<pos+S[0]; j++) {
+            T[j] = S[j-pos+1];
+        }
+        T[0] = MAXSTRLEN;
     }
     return OK;
 }
