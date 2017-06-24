@@ -47,7 +47,7 @@ Status StrAssign(LString &T, char *chars){
         }
         if (!*chars) { //如果是最后一个链块，给空余的位置填补占位字符
             T.tail = p;
-            for (; m<CHUNKSIZE; m++) {  //m是上一个for循环结束后的第一个空余位置出现的位序
+            for (; m<CHUNKSIZE; m++) {  //m是上一个for循环结束后的第一个空余位置出现的位置
                 *(p->ch+m) = Blank;
             }
         }
@@ -109,7 +109,7 @@ int StrCompare(LString T, LString S){
         }
         if (*(ps->ch+js)!=*(pt->ch+jt)) { //比较字符
             return *(pt->ch+jt) - *(ps->ch+js); //如果比较的两字符不相等，直接返回差值
-        }else{
+        }else{ //如果比较的两个字符相等，则同时将待比较的字符后移
             jt++;
             if (jt==CHUNKSIZE) { //取后一个字符时如果此链块结束了，则取下一个链块的字符进行比较
                 pt = pt->next;
@@ -135,7 +135,7 @@ Status CleanStr(LString &T){
     p = T.head;
     while (p) {
         q = p->next;
-        free(p);
+        free(p); //释放存储字符串空间
         p = q;
     }
     T.head = T.tail = NULL;
@@ -190,7 +190,7 @@ Status SubString(LString &Sub, LString T, int pos, int len){
     int m = 0; //m表示将要被复制的字符在T块中的序号（不同于位置）
     /*
         串：      11 22 15 14  # 51 26  # 37 38
-        位置：     0  1  2  3  4  5  6  7  8  9
+        位置：     0  1  2  0  1  2  0  1  2  0
         序号：     1  2  3  4     5  6     7  8
      */
     int flag = 1;
@@ -237,9 +237,126 @@ void Zip(LString &T){
     StrAssign(T, p);//重新生成串T
 }
 
+//在串T的第pos个字符之前插入串S 1<=pos<=StrLength(T)+1
+Status StrInsert(LString &T, int pos, LString S){
+    if (pos<1||pos>S.curLen+1) {
+        return ERROR;
+    }
+    LString t;
+    StrCopy(t, S); //赋值串S到t
+    Zip(T);  //去掉T中多余的填补空余的字符
+    
+    int i = (pos-1)/CHUNKSIZE; //计算到达插入点要经过的块数
+    int j = (pos-1)%CHUNKSIZE; //计算到达插入点在最后一个块链上要经过的字符数
+    Chunk *p = T.head;
+    Chunk *q;
+    
+    if (pos==1) { //串S要插在串T之前，只需要改变串T的头指针即可
+        t.tail->next = T.head;
+        T.head = t.head;
+    }else if (j==0){ //串S插入到T的块链之间，不需要经过字符
+        //找到那两个块链
+        for (int k=1; k<i; k++) {
+            p = p->next;
+        } //循环结束后p指向两个块链的前一个块链
+        q = p->next; //q指向两个块链的后一个块链
+        p->next = t.head; //插入块t（和串S相同）
+        t.tail->next = q;
+        if (q==NULL) {
+            T.tail = t.tail;
+        }
+    }else{  //插在一块内的两个字符之前
+        for (int k=1; k<=i; k++) {
+            p = p->next;  //p指向插入点所在块
+        }
+        q = new Chunk; //生成新块
+        for (int n=0; n<j; n++) {
+            *(q->ch+n) = Blank;  //将q的前j个字符填补为空余的字符
+        }
+        for (int n=j; n<CHUNKSIZE; n++) {
+            *(q->ch+n) = *(p->ch+n); //复制插入点之后的字符到q
+            *(p->ch+n) = Blank; //p的该字符重新赋值为空余字符
+        }
+        q->next = p->next; //将串t和q插入到串T中
+        p->next = t.head;
+        t.tail->next = q;
+    }
+    T.curLen += S.curLen;
+    Zip(T); //去除T中的填补字符
+    return OK;
+}
 
+//从串T中删除第pos个字符起长度为len的子串
+Status StrDelete(LString &T, int pos, int len){
+    if (pos<1||pos>T.curLen||len<0||len+pos-1>T.curLen) {
+        return ERROR;
+    }
+    //找第pos个字符
+    int i = 1; //当前字符是T串的第i个字符，序号（1~T.curlen）
+    int j = 0; //当前字符在当前块中的位置
+    Chunk *p = T.head;
+    while (i<pos) {
+        //这个while循环是为了防止计算第pos个字符的位置错误（相比于用if）
+        while (*(p->ch+j)==Blank) { //当前位置的字符是空余字符，跳过
+            j++;
+            if (j==CHUNKSIZE) {
+                p = p->next;
+                j = 0;
+            }
+        }
+        i++;
+        j++;
+        if (j==CHUNKSIZE) {
+            p = p->next; //转向下一个块链
+            j = 0;
+        }
+    } //循环结束后i=pos，j为第pos个字符在当前块链p中的位置
+    
+    while (i<pos+len) { //删除从第pos个字符起到第pos+len-1个字符，即长度为len
+        while (*(p->ch+j)==Blank) { //跳过填补空余的字符
+            j++;
+            if (j == CHUNKSIZE) {
+                p = p->next;
+                j = 0;
+            }
+        }
+        *(p->ch+j) = Blank; //把字符改成填补空余的字符来“删除”第i个字符
+        i++;
+        j++;
+        if (j==CHUNKSIZE) {
+            p = p->next;
+            j = 0;
+        }
+    }
+    T.curLen -= len;
+    return OK;
+}
 
+//串S，T和V存在，S是非空串
+//用V替换主串T中出现的所有与S相等的不重叠的子串
+//此函数与串的存储结构无关
+Status Replace(LString &T, LString S, LString V){
+    
+    return OK;
+}
 
+//输出字符串T
+void StrPrint(LString T){
+    Chunk *h = T.head;
+    int i = 0;
+    while (i<T.curLen) {
+        for (int j=0; j<CHUNKSIZE; j++) {
+            if (*(h->ch+j)!=Blank) {  //打印不是填补空余的字符
+                printf("%c",*(h->ch+j));
+                i++;
+            }
+        }
+        h = h->next;
+    }
+    printf("\n");
+}
 
+//块链类型的字符串无法销毁
+void DestroyString(){
 
-
+}
