@@ -170,7 +170,7 @@ Status SubString(LString &Sub, LString T, int pos, int len){
     p = new Chunk;
     Sub.head = p;
     for (int i=1; i<n; i++) {
-        q = new Chunk;
+        q = new Chunk; //等价于malloc
         p->next = q;
         p = q;
     }
@@ -332,11 +332,41 @@ Status StrDelete(LString &T, int pos, int len){
     return OK;
 }
 
-//串S，T和V存在，S是非空串
-//用V替换主串T中出现的所有与S相等的不重叠的子串
-//此函数与串的存储结构无关
+
+int Index(LString T, LString S, int pos){
+    if (pos<0||pos>T.curLen) {
+        return ERROR;
+    }
+    LString sub;
+    InitString(sub);
+    int n = T.curLen;
+    int m = S.curLen;
+    int i = pos;
+    while (i<=n-m+1) {
+        SubString(sub, T, i, S.curLen);
+        if (StrCompare(sub, S)==0) {
+            return i;
+        }else{
+            i++;
+        }
+    }
+    return 0;
+}
+
+//如果T,S,V均存在，且S是非空串，用V替换T中出现的所有与S相等且不重叠的子串
 Status Replace(LString &T, LString S, LString V){
-    
+    if (StrEmpty(S)) {
+        return ERROR;
+    }
+    int i = 1;
+    do {
+        i = Index(T, S, i);
+        if (i) {
+            StrDelete(T, i, S.curLen);
+            StrInsert(T, i, V);
+            i += V.curLen;
+        }
+    } while (i);
     return OK;
 }
 

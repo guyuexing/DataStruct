@@ -130,7 +130,7 @@ Status StrInsert(HString &T, int pos, HString S){
         return ERROR;
     }
     if (S.length) {
-        if (!(T.ch = (char *)malloc(sizeof(T.length+S.length)))) {
+        if (!(T.ch = (char *)realloc(T.ch,(T.length+S.length)*sizeof(char)))) {
             exit(OVERFLOW);
         }
         for (int i=T.length-1; i>=pos-1; i--) {
@@ -144,13 +144,70 @@ Status StrInsert(HString &T, int pos, HString S){
     return OK;
 }
 
+//初始化字符串为空串
+void InitString(HString &S){
+    S.ch = NULL;
+    S.length = 0;
+}
+
 //若主串T中存在和串S值相同的子串，则返回它在主串T中第pos个字符之后第一次出现的位置，否则函数值为0
 int Index(HString T, HString S, int pos){
     if (pos<1 || pos>T.length) {
-        
+        return ERROR;
+    }
+    HString sub;
+    InitString(sub);
+    int n = T.length;
+    int m = S.length;
+    int i = pos;
+    while (i<=n-m+1) { //i如果>n-m+1,取出的子串长度小于S的长度，不符条件
+        SubString(sub, T, i, S.length);
+        if (StrCompare(sub, S)==0) {
+            return i;
+        }else{
+            i++;
+        }
     }
     return 0;
 }
 
+Status DeleteString(HString &T, int pos, int len){
+    if (pos<1||pos>T.length||len<0||pos+len-1>T.length) {
+        return ERROR;
+    }
+    for (int i=pos+len-1; i<T.length; i++) {
+        T.ch[i-len] = T.ch[i];
+    }
+    T.length -= len;
+    T.ch = (char *)realloc(T.ch, sizeof(char)*T.length);
+    return OK;
+}
 
+Status Replace(HString &T, HString S, HString V){
+    if (StrEmpty(S)) {
+        return ERROR;
+    }
+    int i = 1; //从T中的第一个字符开始查找S
+    do {
+        i = Index(T, S, i);
+        if (i) {  //串T中存在子串S
+            DeleteString(T, i, S.length);
+            StrInsert(T, i, V);
+            i += V.length; //从插入串V之后的位置开始查找串S
+        }
+    } while (i);
+    return OK;
+}
+
+//堆分配类型的字符串无法销毁
+void Destory(HString T){
+
+}
+
+void Print(HString T){
+    for (int i=0; i<T.length; i++) {
+        printf("%c\n",T.ch[i]);
+    }
+    printf("\n");
+}
 

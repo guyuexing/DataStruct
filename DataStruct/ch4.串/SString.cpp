@@ -128,6 +128,27 @@ int Index4_1(SString T, SString S, int pos){
     return 0;
 }
 
+//T串为主串，S串为模式串，返回子串S在主串T中第pos个字符之后的位置，如不存在，则函数值为0，此算法的时间复杂度为O(m+n)，最坏的情况下是O(m*n)
+int Index4_5(SString T, SString S, int pos){
+    int i = pos; //i表示当前T中比较的字符的位序
+    int j = 1;   //j表示当前S中比较的字符的位序
+    if (pos) {
+        while (i<=T[0]&&j<=S[0]) {
+            if (T[i]==S[j]) {
+                i++;
+                j++;
+            }else{
+                j = 1;
+                i = i-j+2; //i=i-(j-1)+1  j-1表示匹配上的字符数；i-(j-1)表示i退回到比较之前的位序；+1表示i移动到比较之前的下一个位置
+            }
+        }
+        if (j>S[0]) { //j>S[0]表明S[0]中的字符均比较完，即匹配上了
+            return i-S[0]; //i表示匹配上的最后一个字符的下一个字符位序，i-S[0]是模式的第一个字符在串T中的位序
+        }
+    }
+    return 0;
+}
+
 //在串T的第pos个字符之前插入串S
 Status StrInsert(SString T, int pos, SString S){
     if (pos<1 || pos>T[0]+1) {
@@ -135,14 +156,14 @@ Status StrInsert(SString T, int pos, SString S){
     }
     if (T[0]+S[0]<=MAXSTRLEN) { //完全插入
         for (int i=T[0]; i>=pos; i--) {
-            T[i+S[0]] = T[i];
+            T[i+S[0]] = T[i]; //移动插入位置之后的字符腾出空间
         }
         for (int j=pos; j<S[0]+pos; j++) {
             T[j] = S[j-pos+1];
         }
         T[0] += S[0];
-    }else{ //部分插入,此部分代码似乎有问题，不太理解
-        for (int i=MAXSTRLEN; i>=pos; i++) {
+    }else{ //部分插入,不理解
+        for (int i=MAXSTRLEN; i>=pos; i--) {
             T[i] = T[i-S[0]];
         }
         for (int j=pos; j<pos+S[0]; j++) {
@@ -153,7 +174,48 @@ Status StrInsert(SString T, int pos, SString S){
     return OK;
 }
 
+//删除串T中自第pos个字符起长度len的子串
+Status DeleteStr(SString T, int pos, int len){
+    if (pos<1||pos>T[0]||len<0||len+pos-1>T[0]) {
+        return ERROR;
+    }
+    //int i=pos+len是找到要删除串的后一个字符，将要删除串后面的字符均向前移动len个位置
+    for (int i=pos+len; i<=T[0]; i++) {
+        T[i-len] = T[i];
+    }
+    T[0] -= len;
+    return OK;
+}
 
+//串S存在，用V串替换串T中出现的所有与S相等的子串
+Status Replace(SString &T, SString S, SString V){
+    if (StrEmpty(S)) {
+        return ERROR;
+    }
+    int i = 1; //从T中的第一个字符位置开始查找子串S
+    do {
+        i = Index4_5(T, S, i); //从第i个字符开始查找子串S
+        if (i) { //i不为0说明找到了S串，并且i为第一个出现子串S的位置
+            DeleteStr(T, i, S[0]); //删除子串S
+            StrInsert(T, i, V); //在原位置插入串V
+            i += V[0];  //在插入的串V后面继续查找串S
+        }
+    } while (i);
+    return OK;
+}
+
+//SString是定长类型，不能销毁
+void DestoryString(SString T){
+    
+}
+
+//输出字符串T
+void Print(SString T){
+    for (int i = 1; i<=T[0]; i++) {
+        printf("%c\n",T[i]);
+    }
+    printf("\n");
+}
 
 
 
