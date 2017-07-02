@@ -13,4 +13,11 @@
 
 typedef char SString[MAXSTRLEN+1]; //SString是一个长度为MAXSTRLEN+1的字符数组的数据类型
 
-SString s; //s即为长度为MAXSTRLEN+1的字符数组
+//SString s; //s即为长度为MAXSTRLEN+1的字符数组
+
+
+Status StrAssign(SString T, char *chars);
+
+int StrLength(SString T);
+
+void Print(SString T);

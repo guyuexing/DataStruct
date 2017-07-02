@@ -32,6 +32,8 @@
 		ECB706281EFABAC9003E7DA2 /* LString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECB706261EFABAC9003E7DA2 /* LString.cpp */; };
 		ECC44ED51EB8CF260049F1EE /* Algo2_4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECC44ED31EB8CF260049F1EE /* Algo2_4.cpp */; };
 		ECC44ED81EB8D5E10049F1EE /* Algo2_5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECC44ED61EB8D5E10049F1EE /* Algo2_5.cpp */; };
+		ECD14F7B1F093F190065A86F /* KMPAlgo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECD14F791F093F190065A86F /* KMPAlgo.cpp */; };
+		ECD14F7E1F094B0D0065A86F /* KMPAlgo_2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECD14F7C1F094B0D0065A86F /* KMPAlgo_2.cpp */; };
 		ECD4993E1EAC76A1002B0C34 /* Algo2_1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECD4993C1EAC76A1002B0C34 /* Algo2_1.cpp */; };
 		ECD499411EAC827C002B0C34 /* Algo2_2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECD4993F1EAC827C002B0C34 /* Algo2_2.cpp */; };
 		ECDD9C9B1EB242C3001F4645 /* LinkList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECDD9C991EB242C3001F4645 /* LinkList.cpp */; };
@@ -128,6 +130,10 @@
 		ECC44ED41EB8CF260049F1EE /* Algo2_4.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Algo2_4.hpp; sourceTree = "<group>"; };
 		ECC44ED61EB8D5E10049F1EE /* Algo2_5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Algo2_5.cpp; sourceTree = "<group>"; };
 		ECC44ED71EB8D5E10049F1EE /* Algo2_5.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Algo2_5.hpp; sourceTree = "<group>"; };
+		ECD14F791F093F190065A86F /* KMPAlgo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMPAlgo.cpp; sourceTree = "<group>"; };
+		ECD14F7A1F093F190065A86F /* KMPAlgo.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KMPAlgo.hpp; sourceTree = "<group>"; };
+		ECD14F7C1F094B0D0065A86F /* KMPAlgo_2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMPAlgo_2.cpp; sourceTree = "<group>"; };
+		ECD14F7D1F094B0D0065A86F /* KMPAlgo_2.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KMPAlgo_2.hpp; sourceTree = "<group>"; };
 		ECD4993C1EAC76A1002B0C34 /* Algo2_1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Algo2_1.cpp; sourceTree = "<group>"; };
 		ECD4993D1EAC76A1002B0C34 /* Algo2_1.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Algo2_1.hpp; sourceTree = "<group>"; };
 		ECD4993F1EAC827C002B0C34 /* Algo2_2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Algo2_2.cpp; sourceTree = "<group>"; };
@@ -242,6 +248,10 @@
 		EB7EFEFB1EEBE74C001BEF76 /* 具体算法 */ = {
 			isa = PBXGroup;
 			children = (
+				ECD14F7A1F093F190065A86F /* KMPAlgo.hpp */,
+				ECD14F791F093F190065A86F /* KMPAlgo.cpp */,
+				ECD14F7D1F094B0D0065A86F /* KMPAlgo_2.hpp */,
+				ECD14F7C1F094B0D0065A86F /* KMPAlgo_2.cpp */,
 			);
 			name = "具体算法";
 			sourceTree = "<group>";
@@ -476,9 +486,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECD14F7B1F093F190065A86F /* KMPAlgo.cpp in Sources */,
 				EB7EFEFE1EEBE785001BEF76 /* SString.cpp in Sources */,
 				EC1612221EF96618001161D0 /* HString.cpp in Sources */,
 				EB7EFEF61EEBE737001BEF76 /* main.cpp in Sources */,
+				ECD14F7E1F094B0D0065A86F /* KMPAlgo_2.cpp in Sources */,
 				ECB706281EFABAC9003E7DA2 /* LString.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
